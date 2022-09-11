@@ -1,0 +1,15 @@
+@import "../sass/variables";
+
+.carousel-image {
+    width: 100%;
+    height: 95vh;
+}
+
+.carousel-overlay {
+    width: 100%;
+    height: 95vh;
+    position: absolute;
+    background: $primary-color;
+    z-index: 1;
+    opacity: 0.3;
+}
