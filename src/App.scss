@@ -116,12 +116,16 @@ body {
     line-height: 1;
     background: $primary-color;
     font-family: sans-serif;
-    color: $text-color;
+    color: $white-color;
 }
 
 a {
-  color: $text-color;
-  text-decoration: none;
+    color: lighten($color: $gray-color, $amount: 30%);
+    text-decoration: none;
+
+    &:hover {
+        color: $secondary-color;
+    }
 }
 
 ol,

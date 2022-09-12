@@ -1,11 +1,10 @@
 import "./HomeCarousel.scss";
 import { Carousel } from "react-bootstrap";
-import Navbar from "../Navbar/Navbar";
+
 
 const HomeCarousel = () => {
   return (
     <>
-      <Navbar />
       <div className="carousel-overlay"></div>
       <Carousel interval={2000}>
         <Carousel.Item>
