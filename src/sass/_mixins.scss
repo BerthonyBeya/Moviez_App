@@ -1,0 +1,10 @@
+// Search hovering effect
+@mixin searchBarHoveringEffect {
+    background: $white-color;
+    opacity: 0.9;
+    color: $gray-color;
+
+    &::placeholder {
+        color: $gray-color;
+    }
+}

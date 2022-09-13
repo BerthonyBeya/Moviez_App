@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass//mixins";
 
 .search-bar {
     display: flex;
@@ -21,23 +22,11 @@
         }
 
         &:focus {
-            background: $white-color;
-            opacity: 0.9;
-            color: $gray-color;
-
-            &::placeholder {
-                color: $gray-color;
-            }
+            @include searchBarHoveringEffect;
         }
 
         &:hover {
-            background: $white-color;
-            opacity: 0.9;
-            color: $gray-color;
-
-            &::placeholder {
-                color: $gray-color;
-            }
+            @include searchBarHoveringEffect;
         }
     }
 
