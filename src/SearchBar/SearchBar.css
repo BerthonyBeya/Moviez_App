@@ -1,0 +1,88 @@
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.search-bar > input {
+  width: 22rem;
+  height: 45px;
+  border-radius: 30px;
+  padding: 0px 45px;
+  font-size: 1rem;
+  color: #fff;
+  background: #808080;
+  opacity: 0.6;
+  border: none;
+  outline: none;
+}
+
+.search-bar > input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.search-bar > input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.search-bar > input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.search-bar > input::placeholder {
+  color: #fff;
+}
+
+.search-bar > input:focus {
+  background: #fff;
+  opacity: 0.9;
+  color: #808080;
+}
+
+.search-bar > input:focus::-webkit-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:focus:-ms-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:focus::-ms-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:focus::placeholder {
+  color: #808080;
+}
+
+.search-bar > input:hover {
+  background: #fff;
+  opacity: 0.9;
+  color: #808080;
+}
+
+.search-bar > input:hover::-webkit-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:hover:-ms-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:hover::-ms-input-placeholder {
+  color: #808080;
+}
+
+.search-bar > input:hover::placeholder {
+  color: #808080;
+}
+
+.search-bar > button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0.75rem;
+  left: 0.625rem;
+}
+/*# sourceMappingURL=SearchBar.css.map */
