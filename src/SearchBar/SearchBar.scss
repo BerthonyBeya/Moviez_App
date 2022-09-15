@@ -1,5 +1,5 @@
 @import "../sass/variables";
-@import "../sass//mixins";
+@import "../sass/mixins";
 
 .search-bar {
     display: flex;
@@ -35,7 +35,8 @@
         border: none;
 
         position: absolute;
-        top: 0.75rem;
+        z-index: 2;
+        top: 0.70rem;
         left: 0.625rem;
     }
 }
