@@ -16,7 +16,7 @@ const HomeCarousel = () => {
             style={{
               color: "white",
               width: "50%",
-              height: "11.875rem",
+              height: "12rem",     /* 11.875rem */
               position: "absolute",
               padding: "0",
               zIndex: "1",
@@ -26,7 +26,7 @@ const HomeCarousel = () => {
               /* border: "1px solid dodgerblue", */
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between",
+              justifyContent: "space-evenly",
             }}
           >
             <h1 className="carousel__h1">Avengers Endgame</h1>
@@ -35,14 +35,13 @@ const HomeCarousel = () => {
                 {" "}
                 <div>HD</div>
               </div>
-              <p className="carousel-movie__type">Adventure</p>
+              <p className="carousel-movie__type">Action</p>
             </div>
             <p className="carousel__p">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
-              repellat autem voluptatum? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptatem adipisci et saepe ex autem, voluptas
-              quasi cupiditate consectetur ab reprehenderit...
+              After half of all life is snapped away by Thanos, the Avengers are
+              left scattered and divided. Now with a way to reverse the damage,
+              the Avengers and their allies must assemble once more and learn to
+              put differences aside in order to work together...
             </p>
           </Carousel.Caption>
         </Carousel.Item>
