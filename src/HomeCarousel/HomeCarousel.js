@@ -16,7 +16,7 @@ const HomeCarousel = () => {
             style={{
               color: "white",
               width: "50%",
-              height: "12rem",     /* 11.875rem */
+              height: "12rem" /* 11.875rem */,
               position: "absolute",
               padding: "0",
               zIndex: "1",
@@ -29,7 +29,7 @@ const HomeCarousel = () => {
               justifyContent: "space-evenly",
             }}
           >
-            <h1 className="carousel__h1">Avengers Endgame</h1>
+            <h1 className="carousel__h1">Top Gun: Endgame</h1>
             <div className="carousel-container">
               <div className="carousel-movie__quality">
                 {" "}
@@ -53,6 +53,21 @@ const HomeCarousel = () => {
           />
 
           <Carousel.Caption>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
+              repellat autem voluptatum?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
+              repellat autem voluptatum?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
+              repellat autem voluptatum?
+            </p>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
               eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis

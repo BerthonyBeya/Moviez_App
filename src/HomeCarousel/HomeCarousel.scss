@@ -15,26 +15,31 @@
 }
 
 .carousel__h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .carousel__p {
-     font-size: 0.9rem;
+    font-size: 0.9rem;
+    color: lighten($color: $gray-color, $amount: 40%);
+    line-height: 1.5rem;
 }
 
 .carousel-container {
     display: flex;
     width: 40rem;
+    border: 1px solid dodgerblue;
 }
 
 .carousel-movie__quality>div {
-    width: 3rem;
+    width: 2.6rem;
     height: 1.5rem;
     background: $secondary-color;
     text-align: center;
-    border-radius: 40%;
-    font-size: 0.8rem;
+    border-radius: 35%;
+    font-size: 0.7rem;
     color: $black-color;
     margin-right: 2rem;
+    font-weight: bold;
 }
