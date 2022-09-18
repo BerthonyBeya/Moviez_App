@@ -28,8 +28,8 @@
 
 .carousel-container {
     display: flex;
-    width: 40rem;
-    border: 1px solid dodgerblue;
+    width: 42rem;
+    /* border: 1px solid dodgerblue; */
 }
 
 .carousel-movie__quality>div {
@@ -42,4 +42,18 @@
     color: $black-color;
     margin-right: 2rem;
     font-weight: bold;
+}
+
+.carousel__rate,
+.carousel__minutes {
+    margin-right: 2rem;
+}
+
+.carousel__rate {
+    font-weight: bold;
+}
+
+
+.carousel-button-container {
+    padding-top: 1.5rem;
 }

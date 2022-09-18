@@ -1,5 +1,5 @@
 import "./HomeCarousel.scss";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Button } from "react-bootstrap";
 
 const HomeCarousel = () => {
   return (
@@ -14,16 +14,16 @@ const HomeCarousel = () => {
           />
           <Carousel.Caption
             style={{
-              color: "white",
+              color: "#fff",
               width: "50%",
-              height: "12rem" /* 11.875rem */,
+              height: "15rem" /* 11.875rem */,
               position: "absolute",
               padding: "0",
               zIndex: "1",
               left: "1.25rem",
-              bottom: "9rem",
+              bottom: "7rem",
               textAlign: "start",
-              /* border: "1px solid dodgerblue", */
+              border: "1px solid dodgerblue",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-evenly",
@@ -35,6 +35,8 @@ const HomeCarousel = () => {
                 {" "}
                 <div>HD</div>
               </div>
+              <p className="carousel__rate">8.30</p>
+              <p className="carousel__minutes">148 min</p>
               <p className="carousel-movie__type">Action</p>
             </div>
             <p className="carousel__p">
@@ -43,6 +45,31 @@ const HomeCarousel = () => {
               the Avengers and their allies must assemble once more and learn to
               put differences aside in order to work together...
             </p>
+            <div className="carousel-button-container">
+              <span>
+                <Button
+                  style={{
+                    marginRight: "1.5rem",
+                    width: "8rem",
+                    borderRadius: "1rem",
+                    background: "transparent",
+                  }}
+                >
+                  Watch now
+                </Button>
+              </span>
+              <span>
+                <Button
+                  style={{
+                    width: "8rem",
+                    borderRadius: "1rem",
+                    background: "transparent",
+                  }}
+                >
+                  Add to list
+                </Button>
+              </span>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -53,21 +80,6 @@ const HomeCarousel = () => {
           />
 
           <Carousel.Caption>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
-              repellat autem voluptatum?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
-              repellat autem voluptatum?
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-              eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
-              repellat autem voluptatum?
-            </p>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
               eaque voluptatum, ut quasi fugiat nesciunt! Deserunt blanditiis
