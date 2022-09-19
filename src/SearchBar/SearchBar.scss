@@ -36,7 +36,11 @@
 
         position: absolute;
         z-index: 2;
-        top: 0.70rem;
+        top: 0.63rem;
         left: 0.625rem;
+    }
+
+    &__icon {
+        color: $secondary-color;
     }
 }

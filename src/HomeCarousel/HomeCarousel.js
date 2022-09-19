@@ -12,23 +12,7 @@ const HomeCarousel = () => {
             src="images/Avengers.jpg"
             alt="First slide"
           />
-          <Carousel.Caption
-            style={{
-              color: "#fff",
-              width: "50%",
-              height: "15rem" /* 11.875rem */,
-              position: "absolute",
-              padding: "0",
-              zIndex: "1",
-              left: "1.25rem",
-              bottom: "7rem",
-              textAlign: "start",
-              border: "1px solid dodgerblue",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-            }}
-          >
+          <Carousel.Caption className="carousel-caption">
             <h1 className="carousel__h1">Top Gun: Endgame</h1>
             <div className="carousel-container">
               <div className="carousel-movie__quality">
@@ -47,27 +31,14 @@ const HomeCarousel = () => {
             </p>
             <div className="carousel-button-container">
               <span>
-                <Button
-                  style={{
-                    marginRight: "1.5rem",
-                    width: "8rem",
-                    borderRadius: "1rem",
-                    background: "transparent",
-                  }}
-                >
-                  Watch now
-                </Button>
+                <button className="carousel-button__styling carousel-button1">
+                  <p>Watch now</p>
+                </button>
               </span>
               <span>
-                <Button
-                  style={{
-                    width: "8rem",
-                    borderRadius: "1rem",
-                    background: "transparent",
-                  }}
-                >
-                  Add to list
-                </Button>
+                <button className="carousel-button__styling carousel-button2">
+                  <p>Add to list</p>
+                </button>
               </span>
             </div>
           </Carousel.Caption>
