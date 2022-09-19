@@ -1,5 +1,5 @@
 import "./HomeCarousel.scss";
-import { Carousel, Button } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 
 const HomeCarousel = () => {
   return (
