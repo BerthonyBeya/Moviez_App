@@ -1,14 +1,11 @@
 import "./SearchBar.scss";
-import { FaSearch } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
 
 const SearchBar = () => {
   return (
     <form className="search-bar">
       <button type="submit">
-        <FaSearch
-          className="search-bar__icon"
-          fontSize={"20px"}
-        />
+        <BsSearch className="search-bar__icon" />
       </button>
 
       <input type="text" placeholder="Enter your keywords..." />

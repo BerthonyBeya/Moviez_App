@@ -1,26 +1,26 @@
 @import "../sass/variables";
 
-.carousel-image {
+.carousel__image {
     width: 100%;
     height: 95vh;
 }
 
-.carousel-overlay {
+.carousel__overlay {
     width: 100%;
     height: 95vh;
     position: absolute;
     background: $primary-color;
-    z-index: 1;
+    z-index: 2;
     opacity: 0.5;
 }
 
-.carousel-caption {
+.carousel-movie {
     color: $white-color;
     width: 50%;
     height: 15rem;
     position: absolute;
     padding: 0;
-    z-index: 2;
+    z-index: 3;
     left: 1.25rem;
     bottom: 7rem;
     text-align: start;
@@ -28,79 +28,86 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
 
-.carousel__h1 {
-    font-size: 2.5rem;
-    padding-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.carousel__p {
-    font-size: 0.9rem;
-    color: lighten($color: $gray-color, $amount: 40%);
-    line-height: 1.5rem;
-}
-
-.carousel-container {
-    display: flex;
-    width: 42rem;
-    /* border: 1px solid dodgerblue; */
-}
-
-.carousel-movie__quality>div {
-    width: 2.6rem;
-    height: 1.5rem;
-    background: $secondary-color;
-    text-align: center;
-    border-radius: 35%;
-    font-size: 0.7rem;
-    color: $black-color;
-    margin-right: 2rem;
-    font-weight: bold;
-}
-
-.carousel__rate,
-.carousel__minutes {
-    margin-right: 2rem;
-}
-
-.carousel__rate {
-    font-weight: bold;
-}
-
-
-.carousel-button-container {
-    padding-top: 1.5rem;
-}
-
-.carousel-button__styling {
-    width: 8.3rem;
-    height: 2.2rem;
-    border-radius: 1rem;
-    background-color: transparent;
-}
-
-.carousel-button1 {
-    margin-right: 1.5rem;
-    border: 1px solid $secondary-color;
-    color: lighten($secondary-color, $amount: 10%);
-
-    &:hover {
-        background: $secondary-color;
-        color: $black-color;
-        border: 1px solid transparent;
+    &__title {
+        font-size: 2.5rem;
+        padding-bottom: 0.5rem;
+        font-weight: bold;
     }
-}
 
-.carousel-button2 {
-    border: 1px solid $gray-color;
-    color: lighten($color: $gray-color, $amount: 40%);
+    &__bio {
+        font-size: 0.9rem;
+        color: lighten($color: $gray-color, $amount: 40%);
+        line-height: 1.5rem;
+    }
 
-    &:hover {
-        background: darken($color: $white-color, $amount: 10%);
+    &-details {
+        display: flex;
+        width: 42rem;
+    }
+
+    &-details__quality>div {
+        width: 2.6rem;
+        height: 1.5rem;
+        background: $secondary-color;
+        text-align: center;
+        border-radius: 25%;
+        font-size: 0.7rem;
         color: $black-color;
-        border: 1px solid transparent;
+        margin-right: 2rem;
+        font-weight: bold;
+    }
+
+    &-details__rate,
+    &-details__minutes {
+        margin-right: 2rem;
+    }
+
+    &-details__rate {
+        font-weight: bold;
+    }
+
+    &-buttons {
+        padding-top: 1.5rem;
+
+        &__styling {
+            width: 8.3rem;
+            height: 2.2rem;
+            border-radius: 1rem;
+            background-color: transparent;
+        }
+
+        &--watch {
+            margin-right: 1.5rem;
+            border: 1.9px solid $secondary-color;
+            color: lighten($secondary-color, $amount: 10%);
+
+            &:hover {
+                background: $secondary-color;
+                color: $black-color;
+                border: 1px solid transparent;
+            }
+        }
+
+        &--add {
+            border: 1.9px solid $gray-color;
+            color: lighten($color: $gray-color, $amount: 40%);
+
+            &:hover {
+                background: darken($color: $white-color, $amount: 10%);
+                color: $black-color;
+                border: 1px solid transparent;
+            }
+        }
+
+        &__watch__icon {
+            font-size: 0.7rem;
+            margin-bottom: 0.1rem;
+        }
+
+        &__heart__icon {
+            margin-bottom: 0.1rem;
+        }
     }
 
 }

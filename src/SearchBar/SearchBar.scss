@@ -1,6 +1,8 @@
 @import "../sass/variables";
 @import "../sass/mixins";
 
+
+
 .search-bar {
     display: flex;
     position: relative;
@@ -41,6 +43,8 @@
     }
 
     &__icon {
-        color: $secondary-color;
+        color: $white-color;
+        font-size: 1.1rem;
     }
+
 }
