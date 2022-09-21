@@ -12,10 +12,10 @@
     width: 100%;
 }
 
-.navbar__ul {
+.navbar-ul {
     display: flex;
-}
 
-.navbar__li {
-    padding-right: 2.5rem;
+    &__link {
+        padding-right: 2.5rem;
+    }
 }
