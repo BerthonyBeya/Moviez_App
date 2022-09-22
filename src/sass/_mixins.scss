@@ -2,7 +2,7 @@
 @mixin searchBarHoveringEffect {
     background: $white-color;
     opacity: 0.9;
-    color: $gray-color;
+    color: $gray-color; 
 
     &::placeholder {
         color: $gray-color;

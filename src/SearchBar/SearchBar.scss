@@ -18,17 +18,22 @@
         opacity: 0.6;
         border: none;
         outline: none;
+        transition: all ease-in-out 0.3s;
 
         &::placeholder {
             color: $white-color;
         }
 
         &:focus {
+            transition: all ease-in-out 0.3s;
             @include searchBarHoveringEffect;
+
         }
 
         &:hover {
+            transition: all ease-in-out 0.3s;
             @include searchBarHoveringEffect;
+
         }
     }
 
@@ -43,7 +48,7 @@
     }
 
     &__icon {
-        color: $white-color;
+        color: $secondary-color;
         font-size: 1.1rem;
     }
 
