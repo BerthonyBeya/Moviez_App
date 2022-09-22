@@ -19,7 +19,10 @@ const HomeCarousel = () => {
             <h1 className="carousel-movie__title">Top Gun: Endgame</h1>
             <div className="carousel-movie-details">
               <div className="carousel-movie-details__quality">
-                <div>HD</div>
+                <div>
+                  {" "}
+                  <p>HD</p>
+                </div>
               </div>
               <p className="carousel-movie-details__rate">
                 <FaStar /> 8.30
