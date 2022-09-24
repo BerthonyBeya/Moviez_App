@@ -34,7 +34,7 @@ const HomeCarousel = () => {
               After half of all life is snapped away by Thanos, the Avengers are
               left scattered and divided. Now with a way to reverse the damage,
               the Avengers and their allies must assemble once more and learn to
-              put differences aside in order to work together...
+              put differences aside in order to work together.....
             </p>
             <div className="carousel-movie-buttons">
               <span>
