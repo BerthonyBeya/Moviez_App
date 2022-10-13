@@ -14,7 +14,7 @@ const HomeCarousel = () => {
             className="carousel__image"
             src="images/Avengers.jpg"
             alt="First slide"
-          />
+            />
           <Carousel.Caption className="carousel-movie">
             <h1 className="carousel-movie__title">Avengers: Endgame</h1>
             <div className="carousel-movie-details">
