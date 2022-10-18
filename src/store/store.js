@@ -1,2 +1,1 @@
-// This is the storeeee
-//
+// This is the store
