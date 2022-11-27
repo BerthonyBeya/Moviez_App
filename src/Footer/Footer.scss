@@ -1,0 +1,6 @@
+@import "../sass/variables";
+
+.Footer {
+    height: 15rem;
+    background-color: lighten($color: $black-color, $amount: 5%);
+}

@@ -2,14 +2,16 @@ import "./App.scss";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import Navbar from "./Navbar/Navbar";
 import MoviesGrid from "./MoviesGrid/MoviesGrid";
+import Footer from "./Footer/Footer";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <HomeCarousel />
-      <MoviesGrid type={"Movies"} />
-      <MoviesGrid type={"Series"} />
+      <MoviesGrid type={"Top movies"} />
+      <MoviesGrid type={"Top series"} />
+      <Footer />
     </div>
   );
 }
