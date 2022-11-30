@@ -1,4 +1,6 @@
 import "./MoviesGrid.scss";
+import { useEffect, useState } from "react";
+import { fetchMovies } from "../apis/FetchMovies";
 
 const MoviesGrid = (props) => {
   return (
@@ -13,7 +15,7 @@ const MoviesGrid = (props) => {
         <div className="movies-grid__movie">
           <img
             className="movies-grid__movie__img"
-            src="images/Avengers.jpg"
+            src={""} // "images/Avengers.jpg"
             alt="img"
           />
         </div>
