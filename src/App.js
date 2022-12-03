@@ -4,13 +4,8 @@ import Navbar from "./Navbar/Navbar";
 import MoviesGrid from "./MoviesGrid/MoviesGrid";
 import Footer from "./Footer/Footer";
 import { useEffect } from "react";
-import FetchMovies from "./apis/FetchMovies";
 
 function App() {
-  useEffect(() => {
-    FetchMovies();
-  }, []);
-
   return (
     <div className="App">
       <Navbar />

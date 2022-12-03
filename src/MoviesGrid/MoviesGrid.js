@@ -1,6 +1,5 @@
 import "./MoviesGrid.scss";
 import { useEffect, useState } from "react";
-import { fetchMovies } from "../apis/FetchMovies";
 
 const MoviesGrid = (props) => {
   return (
