@@ -3,9 +3,9 @@ import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import Navbar from "./Navbar/Navbar";
 import MoviesGrid from "./MoviesGrid/MoviesGrid";
 import Footer from "./Footer/Footer";
-import { useEffect } from "react";
 
 function App() {
+
   return (
     <div className="App">
       <Navbar />
