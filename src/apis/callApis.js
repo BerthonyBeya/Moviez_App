@@ -28,33 +28,12 @@ fetch("http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228").then((result) => {
       });
     }
   ); */
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { addMovies } from "../store/features/moviesSlice";
 
-/* const fetchMovies = new Promise((resolve, reject) => {
-  console.log("This is the promise");
-  resolve("This is the resolve");
-  fetch("http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228").then(
-    (result) => {
-      result.json().then((result) => {
-        console.log(result);
-      });
-    }
-  );
-});
+import axios from "axios";
 
-export default fetchMovies; */
-
+// Fetching movies
 const fetchMovies = () => {
-  console.log("This is the method");
-  fetch("http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers").then(
-    (result) => {
-      result.json().then((result) => {
-        console.log(result.Search[0].Poster);
-      });
-    }
-  );
+  return axios("http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers");
 };
 
 export default fetchMovies;

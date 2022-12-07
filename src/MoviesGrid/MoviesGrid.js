@@ -1,11 +1,7 @@
 import "./MoviesGrid.scss";
 import { useEffect, useState } from "react";
-import fetchMovies from "../apis/fetchMovies";
 
 const MoviesGrid = (props) => {
-  const moviePoster = fetchMovies();
-  console.log(moviePoster, "nkhjkjjjjkjjkj");
-
   return (
     <div className="movies">
       <span>
