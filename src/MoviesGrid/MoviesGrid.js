@@ -1,7 +1,19 @@
 import "./MoviesGrid.scss";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const MoviesGrid = (props) => {
+  // Geeting movies from redux
+  const movies = useSelector((state) => {
+    return state.movies.value;
+  });
+
+  movies?.movies
+    ? movies.movies.forEach((el) => {
+        console.log(el.Poster);
+      })
+    : console.log("Nothing");
+
   return (
     <div className="movies">
       <span>
@@ -11,30 +23,19 @@ const MoviesGrid = (props) => {
         <span></span>
       </span>
       <div className="movies-grid">
-        <div className="movies-grid__movie">
-          <img
-            className="movies-grid__movie__img"
-            src={""} // "images/Avengers.jpg"
-            alt="img"
-          />
-        </div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
-        <div className="movies-grid__movie"></div>
+        {movies?.movies
+          ? movies.movies.map((el) => {
+              return (
+                <div className="movies-grid__movie">
+                  <img
+                    className="movies-grid__movie__img"
+                    src={el.Poster} // "images/Avengers.jpg"
+                    alt="img"
+                  />
+                </div>
+              );
+            })
+          : ""}
       </div>
     </div>
   );

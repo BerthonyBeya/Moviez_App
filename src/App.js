@@ -3,23 +3,29 @@ import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import Navbar from "./Navbar/Navbar";
 import MoviesGrid from "./MoviesGrid/MoviesGrid";
 import Footer from "./Footer/Footer";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import { addMovies } from "./store/features/moviesSlice";
 import fetchMovies from "./apis/callApis";
 
 function App() {
+  const [allMovies, setAllMovies] = useState();
   const dispatch = useDispatch();
 
+  // Getting movies from callApis
   useEffect(() => {
-    dispatch(addMovies({ movies: "These are movies" }));
-  }, [dispatch]);
+    const fetchingAllMovies = async () => {
+      const data = await fetchMovies();
+      setAllMovies(data.data.Search);
+    };
 
-  const movies = useSelector((state) => {
-    return state.movies.value;
-  });
+    fetchingAllMovies();
+  }, []);
 
-  console.log(movies);
+  useEffect(() => {
+    // Adding movies in redux
+    dispatch(addMovies({ movies: allMovies }));
+  }, [allMovies, dispatch]);
 
   return (
     <div className="App">
