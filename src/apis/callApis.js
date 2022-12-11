@@ -37,3 +37,13 @@ const fetchMovies = () => {
 };
 
 export default fetchMovies;
+
+const reqOne = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers";
+const reqTwo = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=batman";
+
+const fetch = async () => {
+  const allMovies = await axios.all(reqOne, reqTwo);
+  console.log(allMovies);
+};
+
+fetch();

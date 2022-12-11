@@ -36,11 +36,11 @@
 
     &-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(7, 1fr); 
         grid-gap: 1.5rem;
 
         &__movie {
-            border: 1px solid dodgerblue;
+            // border: 1px solid dodgerblue;
             height: 13rem;
             border-radius: 10px;
 

@@ -8,12 +8,6 @@ const MoviesGrid = (props) => {
     return state.movies.value;
   });
 
-  movies?.movies
-    ? movies.movies.forEach((el) => {
-        console.log(el.Poster);
-      })
-    : console.log("Nothing");
-
   return (
     <div className="movies">
       <span>
@@ -29,7 +23,7 @@ const MoviesGrid = (props) => {
                 <div className="movies-grid__movie">
                   <img
                     className="movies-grid__movie__img"
-                    src={el.Poster} // "images/Avengers.jpg"
+                    src={el.Poster} 
                     alt="img"
                   />
                 </div>
