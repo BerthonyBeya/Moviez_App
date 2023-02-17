@@ -1,5 +1,4 @@
 import "./MoviesGrid.scss";
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const MoviesGrid = (props) => {
