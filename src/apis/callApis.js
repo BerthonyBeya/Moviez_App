@@ -38,7 +38,7 @@ const fetchMovies = () => {
 
 export default fetchMovies;
 
-const reqOne = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers";
+/* const reqOne = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers";
 const reqTwo = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=batman";
 
 const fetch = async () => {
@@ -46,4 +46,14 @@ const fetch = async () => {
   console.log(allMovies);
 };
 
-fetch();
+fetch(); */
+
+const moviesFuc = async () => {
+  const movies = await axios(
+    "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers"
+  );
+
+  console.log(movies);
+};
+
+moviesFuc();

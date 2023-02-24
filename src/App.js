@@ -19,7 +19,7 @@ function App() {
       setAllMovies(data.data.Search);
     };
 
-    fetchingAllMovies();
+    fetchingAllMovies(); 
   }, []);
 
   useEffect(() => {
