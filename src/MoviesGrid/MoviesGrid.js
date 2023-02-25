@@ -20,9 +20,15 @@ const MoviesGrid = (props) => {
           ? movies.movies.map((el) => {
               return (
                 <div className="movies-grid__movie">
+                  <div className="movies-grid__quality">
+                    <div>
+                      {" "}
+                      <p>HD</p>
+                    </div>
+                  </div>
                   <img
                     className="movies-grid__movie__img"
-                    src={el.Poster} 
+                    src={el.Poster}
                     alt="img"
                   />
                 </div>

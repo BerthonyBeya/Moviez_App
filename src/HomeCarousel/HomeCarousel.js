@@ -1,7 +1,6 @@
 import "./HomeCarousel.scss";
 import { Carousel } from "react-bootstrap";
-import { FaStar } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
+import { FaStar, FaPlay, FaClipboardList } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 
 const HomeCarousel = () => {
@@ -14,7 +13,7 @@ const HomeCarousel = () => {
             className="carousel__image"
             src="images/Avengers.jpg"
             alt="First slide"
-            />
+          />
           <Carousel.Caption className="carousel-movie">
             <h1 className="carousel-movie__title">Avengers: Endgame</h1>
             <div className="carousel-movie-details">
@@ -34,7 +33,7 @@ const HomeCarousel = () => {
               After half of all life is snapped away by Thanos, the Avengers are
               left scattered and divided. Now with a way to reverse the damage,
               the Avengers and their allies must assemble once more and learn to
-              put differences aside in order to work together..... 
+              put differences aside in order to work together.....
             </p>
             <div className="carousel-movie-buttons">
               <span>
@@ -53,6 +52,14 @@ const HomeCarousel = () => {
                   </p>
                 </button>
               </span>
+              <span>
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+                  <p>
+                    <FaClipboardList className="carousel-movie-buttons__heart__icon" />
+                    Details
+                  </p>
+                </button>
+              </span>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -61,7 +68,7 @@ const HomeCarousel = () => {
             className="carousel__image"
             src="images/Dune.jpg"
             alt="First slide"
-            />
+          />
           <Carousel.Caption className="carousel-movie">
             <h1 className="carousel-movie__title">Dune</h1>
             <div className="carousel-movie-details">
@@ -81,7 +88,7 @@ const HomeCarousel = () => {
               After half of all life is snapped away by Thanos, the Avengers are
               left scattered and divided. Now with a way to reverse the damage,
               the Avengers and their allies must assemble once more and learn to
-              put differences aside in order to work together..... 
+              put differences aside in order to work together.....
             </p>
             <div className="carousel-movie-buttons">
               <span>
@@ -100,6 +107,14 @@ const HomeCarousel = () => {
                   </p>
                 </button>
               </span>
+              <span>
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+                  <p>
+                    <FaClipboardList className="carousel-movie-buttons__heart__icon" />
+                    Details
+                  </p>
+                </button>
+              </span>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -108,7 +123,7 @@ const HomeCarousel = () => {
             className="carousel__image"
             src="images/Theboys.jpg"
             alt="First slide"
-            />
+          />
           <Carousel.Caption className="carousel-movie">
             <h1 className="carousel-movie__title">The Boys</h1>
             <div className="carousel-movie-details">
@@ -128,7 +143,7 @@ const HomeCarousel = () => {
               After half of all life is snapped away by Thanos, the Avengers are
               left scattered and divided. Now with a way to reverse the damage,
               the Avengers and their allies must assemble once more and learn to
-              put differences aside in order to work together..... 
+              put differences aside in order to work together.....
             </p>
             <div className="carousel-movie-buttons">
               <span>
@@ -147,6 +162,14 @@ const HomeCarousel = () => {
                   </p>
                 </button>
               </span>
+              <span>
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+                  <p>
+                    <FaClipboardList className="carousel-movie-buttons__heart__icon" />
+                    Details
+                  </p>
+                </button>
+              </span>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -155,7 +178,7 @@ const HomeCarousel = () => {
             className="carousel__image"
             src="images/Mando.jpg"
             alt="First slide"
-            />
+          />
           <Carousel.Caption className="carousel-movie">
             <h1 className="carousel-movie__title">The Mandalorian</h1>
             <div className="carousel-movie-details">
@@ -175,7 +198,7 @@ const HomeCarousel = () => {
               After half of all life is snapped away by Thanos, the Avengers are
               left scattered and divided. Now with a way to reverse the damage,
               the Avengers and their allies must assemble once more and learn to
-              put differences aside in order to work together..... 
+              put differences aside in order to work together.....
             </p>
             <div className="carousel-movie-buttons">
               <span>
@@ -191,6 +214,14 @@ const HomeCarousel = () => {
                   <p>
                     <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                     Add to list
+                  </p>
+                </button>
+              </span>
+              <span>
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+                  <p>
+                    <FaClipboardList className="carousel-movie-buttons__heart__icon" />
+                    Details
                   </p>
                 </button>
               </span>

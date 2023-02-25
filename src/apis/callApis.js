@@ -4,56 +4,25 @@
 
 // Endpoint with ID: "http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228"
 
-/* import axios from "axios";
-
-
-fetch("http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers").then(
-  (result) => {
-    result.json().then((result) => {
-      console.log(result);
-    });
-  }
-);
-
-fetch("http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228").then((result) => {
-  result.json().then((result) => {
-    console.log(result);
-  });
-}); */
-
-/* fetch("http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228").then(
-    (result) => {
-      result.json().then((result) => {
-        console.log(result);
-      });
-    }
-  ); */
 
 import axios from "axios";
 
-// Fetching movies
+// Fetching all movies at once
 const fetchMovies = () => {
-  return axios("http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers");
+  let endpoints = [
+    "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers",
+    "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=supermen",
+    "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=batman",
+  ];
+
+  let movies = axios.all(
+    endpoints.map((endpoint) => {
+      return axios.get(endpoint);
+    })
+  );
+
+  return movies;
 };
 
 export default fetchMovies;
 
-/* const reqOne = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers";
-const reqTwo = "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=batman";
-
-const fetch = async () => {
-  const allMovies = await axios.all(reqOne, reqTwo);
-  console.log(allMovies);
-};
-
-fetch(); */
-
-const moviesFuc = async () => {
-  const movies = await axios(
-    "http://www.omdbapi.com/?apikey=82a62b5c&type=movie&s=avengers"
-  );
-
-  console.log(movies);
-};
-
-moviesFuc();

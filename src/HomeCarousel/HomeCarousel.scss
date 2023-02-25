@@ -97,6 +97,7 @@
         }
 
         &--add {
+            margin-right: 1.5rem;
             border: 0.1rem solid $gray-color;
             color: lighten($color: $gray-color, $amount: 40%);
 

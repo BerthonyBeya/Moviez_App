@@ -1,6 +1,7 @@
 @import "../sass/variables";
 
 .movies {
+
     &>span {
         display: flex;
 
@@ -36,10 +37,11 @@
 
     &-grid {
         display: grid;
-        grid-template-columns: repeat(7, 1fr); 
+        grid-template-columns: repeat(7, 1fr);
         grid-gap: 1.5rem;
 
         &__movie {
+            position: relative;
             // border: 1px solid dodgerblue;
             height: 13rem;
             border-radius: 10px;
@@ -51,5 +53,23 @@
                 border-radius: 10px;
             }
         }
+
+        &__quality {
+            position: absolute;
+            left: 7.3rem;
+            top: 0.2rem;
+            width: 2.6rem;
+            height: 1.3rem;
+            background: $secondary-color;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: $black-color;
+            margin-right: 2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+
     }
 }
