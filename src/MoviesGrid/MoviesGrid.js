@@ -26,6 +26,7 @@ const MoviesGrid = (props) => {
                       <p>HD</p>
                     </div>
                   </div>
+                  <div className="movies-grid__overlay"></div>
                   <img
                     className="movies-grid__movie__img"
                     src={el.Poster}
