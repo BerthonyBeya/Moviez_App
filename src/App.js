@@ -38,9 +38,8 @@ function App() {
     setAllMovies([...moviesArray, ...moviesArray2, ...moviesArray3]);
     // Adding movies in redux
     dispatch(addMovies({ movies: allMovies }));
-  }, [allMovies, moviesArray, moviesArray2, moviesArray3, dispatch]);
+  }, [moviesArray, moviesArray2, moviesArray3, dispatch]);
 
-  console.log(allMovies);
 
   return (
     <div className="App">
