@@ -10,7 +10,7 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li className="navbar-ul__link">
-            <a href="/movie">Movies</a>
+            <a href="/movies">Movies</a>
           </li>
           <li className="navbar-ul__link">
             <a href="/tvshows">Tv Shows</a>

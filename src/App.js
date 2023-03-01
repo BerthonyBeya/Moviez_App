@@ -40,7 +40,6 @@ function App() {
     dispatch(addMovies({ movies: allMovies }));
   }, [moviesArray, moviesArray2, moviesArray3, dispatch]);
 
-
   return (
     <div className="App">
       <Navbar />
