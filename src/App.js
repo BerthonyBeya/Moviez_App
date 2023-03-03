@@ -1,12 +1,14 @@
 import "./App.scss";
-import HomeCarousel from "./HomeCarousel/HomeCarousel";
-import Navbar from "./Navbar/Navbar";
-import MoviesGrid from "./MoviesGrid/MoviesGrid";
-import Footer from "./Footer/Footer";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { addMovies } from "./store/features/moviesSlice";
 import fetchMovies from "./apis/callApis";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Pages
+import HomePage from "./HomePage/HomePage";
+import MoviesSection from "./MoviesSection/MoviesSection";
+import SeriesSection from "./SeriesSection/SeriesSection";
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
@@ -14,6 +16,12 @@ function App() {
   const [moviesArray2, setMoviesArray2] = useState([]);
   const [moviesArray3, setMoviesArray3] = useState([]);
   const dispatch = useDispatch();
+
+  const route = createBrowserRouter([
+    { path: "/", element: <HomePage /> },
+    { path: "/movies", element: <MoviesSection /> },
+    { path: "/series", element: <SeriesSection /> },
+  ]);
 
   // Getting movies from callApis
   useEffect(() => {
@@ -42,11 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <HomeCarousel />
-      <MoviesGrid type={"Top movies"} />
-      <MoviesGrid type={"Top series"} />
-      <Footer />
+      <RouterProvider router={route} />
     </div>
   );
 }

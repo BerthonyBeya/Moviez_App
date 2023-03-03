@@ -1,5 +1,5 @@
 const MoviesSection = () => {
-  return <div>This is Movies sections</div>;
+  return <div>Movies section</div>;
 };
 
 export default MoviesSection;
