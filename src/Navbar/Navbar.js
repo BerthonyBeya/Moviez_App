@@ -1,5 +1,6 @@
 import "./NavBar.scss";
 import SearchBar from "../SearchBar/SearchBar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,13 +8,13 @@ const Navbar = () => {
       <nav className="navbar">
         <ul className="navbar-ul">
           <li className="navbar-ul__link">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="navbar-ul__link">
             <a href="/movies">Movies</a>
           </li>
           <li className="navbar-ul__link">
-            <a href="/tvshows">Tv Shows</a>
+            <a href="/series">Tv Shows</a>
           </li>
           <li className="navbar-ul__link">
             <a href="/favorite">Favorite</a>

@@ -1,5 +1,15 @@
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import MoviesGrid from "../MoviesGrid/MoviesGrid";
+
 const SeriesSection = () => {
-  return <h1>Series sections</h1>;
+  return (
+    <>
+      <Navbar />
+      <MoviesGrid type={"Tv Shows"} />
+      <Footer />
+    </>
+  );
 };
 
 export default SeriesSection;

@@ -9,8 +9,8 @@ const HomePage = () => {
     <Fragment>
       <Navbar />
       <HomeCarousel />
-      <MoviesGrid type={"Top movies"} />
-      <MoviesGrid type={"Top series"} />
+      <MoviesGrid type={"Top Movies"} />
+      <MoviesGrid type={"Top Shows"} />
       <Footer />
     </Fragment>
   );
