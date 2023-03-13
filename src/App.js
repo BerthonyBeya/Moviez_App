@@ -32,7 +32,7 @@ function App() {
           setMoviesArray(el.data.Search);
         }
         if (index === 1) {
-          setMoviesArray2(el.data.Search);
+          setMoviesArray2(el.data.Search); 
         }
         if (index === 2) {
           setMoviesArray3(el.data.Search);
