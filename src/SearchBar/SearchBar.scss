@@ -9,9 +9,9 @@
 
     &>input {
         width: 22rem;
-        height: 45px;
-        border-radius: 10px;
-        padding: 0px 45px;
+        height: 2.813rem;
+        border-radius: 0.625rem;
+        padding: 0rem 2.813rem;
         font-size: 1rem;
         color: $white-color;
         background: $gray-color;
@@ -19,7 +19,7 @@
         border: none;
         outline: none;
         transition: all ease-in-out 0.3s;
-        box-shadow: 5px 5px 10px $black-color;
+        box-shadow: 0.313rem 0.313rem 0.625rem $black-color;
 
 
         &::placeholder {
