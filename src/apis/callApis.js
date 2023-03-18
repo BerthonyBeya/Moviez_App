@@ -4,6 +4,8 @@
 
 // Endpoint with ID: "http://www.omdbapi.com/?apikey=82a62b5c&i=tt0848228"
 
+// APIs
+
 import axios from "axios";
 
 // Fetching all movies at once
