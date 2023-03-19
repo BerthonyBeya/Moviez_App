@@ -12,9 +12,7 @@ import SeriesSection from "./SeriesSection/SeriesSection";
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
-  const [moviesArray, setMoviesArray] = useState([]);
-  const [moviesArray2, setMoviesArray2] = useState([]);
-  const [moviesArray3, setMoviesArray3] = useState([]);
+
   const dispatch = useDispatch();
 
   const route = createBrowserRouter([
@@ -23,30 +21,18 @@ function App() {
     { path: "/series", element: <SeriesSection /> },
   ]);
 
-  // Getting movies from callApis
   useEffect(() => {
+    // Getting movies from callApis
     const fetchingAllMovies = async () => {
-      const data = await fetchMovies();
-      data.forEach((el, index) => {
-        if (index === 0) {
-          setMoviesArray(el.data.Search);
-        }
-        if (index === 1) {
-          setMoviesArray2(el.data.Search); 
-        }
-        if (index === 2) {
-          setMoviesArray3(el.data.Search);
-        }
-      });
+      let data = await fetchMovies();
+      console.log(data);
+      setAllMovies(data.data.results);
     };
     fetchingAllMovies();
   }, []);
 
-  useEffect(() => {
-    setAllMovies([...moviesArray, ...moviesArray2, ...moviesArray3]);
-    // Adding movies in redux
-    dispatch(addMovies({ movies: allMovies }));
-  }, [moviesArray, moviesArray2, moviesArray3, dispatch]);
+  // Adding movies in redux
+  dispatch(addMovies({ movies: allMovies }));
 
   return (
     <div className="App">

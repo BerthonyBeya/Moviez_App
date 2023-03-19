@@ -37,7 +37,11 @@ const MoviesBox = (props) => {
           </button>
         </div>
       </div>
-      <img className="movies-grid__movie__img" src={props.poster} alt="img" />
+      <img
+        className="movies-grid__movie__img"
+        src={`https://image.tmdb.org/t/p/w500/${props.poster}`}
+        alt="img"
+      />
     </div>
   );
 };

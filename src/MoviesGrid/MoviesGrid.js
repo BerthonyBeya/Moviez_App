@@ -6,6 +6,7 @@ const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
     return state.movies.value;
   });
+
   return (
     <div className="movies">
       <span>
@@ -17,7 +18,7 @@ const MoviesGrid = (props) => {
       <div className="movies-grid">
         {movies?.movies
           ? movies.movies.map((el) => {
-              return <MoviesBox poster={el.Poster} />;
+              return <MoviesBox poster={el.poster_path} />;
             })
           : ""}
       </div>
