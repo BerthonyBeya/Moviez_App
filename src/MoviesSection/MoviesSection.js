@@ -6,7 +6,7 @@ const MoviesSection = () => {
   return (
     <>
       <Navbar />
-      <MoviesGrid type={"Movies"} />
+      <MoviesGrid type={"Now Playing Movies"} />
       <Footer />
     </>
   );

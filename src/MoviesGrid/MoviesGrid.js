@@ -1,6 +1,7 @@
 import "./MoviesGrid.scss";
 import MoviesBox from "./MovieBox/MoviesBox";
 import { useSelector } from "react-redux";
+import uuid from "react-uuid";
 
 const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
@@ -18,7 +19,7 @@ const MoviesGrid = (props) => {
       <div className="movies-grid">
         {movies?.movies
           ? movies.movies.map((el) => {
-              return <MoviesBox poster={el.poster_path} />;
+              return <MoviesBox poster={el.poster_path} key={uuid()}/>;
             })
           : ""}
       </div>
