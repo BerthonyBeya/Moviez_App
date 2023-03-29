@@ -20,15 +20,41 @@ const MoviesGrid = (props) => {
           </div>
           <span></span>
         </span>
-        {movies?.upcomingMovies?.length !== 0 ? (
-          <div className="movies-grid">
-            {/* Display upcoming movies */}
-            {movies?.upcomingMovies?.map((el) => {
-              return <MoviesBox poster={el.poster_path} key={uuid()} />;
-            })}
-          </div>
+        {props.type === "Upcoming Movies" ? (
+          movies?.upcomingMovies?.length !== 0 ? (
+            <div className="movies-grid">
+              {/* Display upcoming movies */}
+              {movies?.upcomingMovies?.map((el) => {
+                return <MoviesBox poster={el.poster_path} key={uuid()} />;
+              })}
+            </div>
+          ) : (
+            <NotFound type={"Movies"} />
+          )
+        ) : props.type === "Upcoming Shows" ? (
+          movies?.upcomingMovies?.length !== 0 ? (
+            <div className="movies-grid">
+              {/* Display upcoming movies */}
+              {movies?.upcomingMovies?.map((el) => {
+                return <MoviesBox poster={el.poster_path} key={uuid()} />;
+              })}
+            </div>
+          ) : (
+            <NotFound type={"Movies"} />
+          )
+        ) : props.type === "Now Playing Movies" ? (
+          movies?.nowPlaying?.length !== 0 ? (
+            <div className="movies-grid">
+              {/* Display upcoming movies */}
+              {movies?.nowPlaying?.map((el) => {
+                return <MoviesBox poster={el.poster_path} key={uuid()} />;
+              })}
+            </div>
+          ) : (
+            <NotFound type={"Movies"} />
+          )
         ) : (
-          <NotFound type={"Movies"} />
+          ""
         )}
       </div>
     </div>

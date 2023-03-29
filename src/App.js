@@ -12,8 +12,10 @@ import SeriesSection from "./SeriesSection/SeriesSection";
 
 function App() {
   // Upcoming movies states
-  const [moviePAGE1, setMoviePAGE1] = useState([]);
-  const [moviePAGE2, setMoviePAGE2] = useState([]);
+  const [upcomingMoviesPAGE1, setUpcomingMoviesPAGE1] = useState([]);
+  const [upcomingMoviesPAGE2, setUpcomingMoviesPAGE2] = useState([]);
+  const [nowPlayingMoviesPAGE1, setNowPlayingMoviesPAGE1] = useState([]);
+  const [nowPlayingMoviesPAGE2, setNowPlayingMoviesPAGE2] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -29,18 +31,28 @@ function App() {
       const endpoints = [
         "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
         "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
       ];
 
       try {
         axios.all(
           endpoints.map(async (endpoint, index) => {
-            const moviepage = await axios.get(endpoint);
+            const moviepages = await axios.get(endpoint);
             if (index === 0) {
-              setMoviePAGE1(moviepage.data.results);
+              setUpcomingMoviesPAGE1(moviepages.data.results);
             }
 
             if (index === 1) {
-              setMoviePAGE2(moviepage.data.results);
+              setUpcomingMoviesPAGE2(moviepages.data.results);
+            }
+
+            if (index === 2) {
+              setNowPlayingMoviesPAGE1(moviepages.data.results);
+            }
+
+            if (index === 3) {
+              setNowPlayingMoviesPAGE2(moviepages.data.results);
             }
           })
         );
@@ -56,7 +68,12 @@ function App() {
   console.log(moviePAGE2);
  */
   // Adding upcoming movies in redux
-  dispatch(addMovies({ upcomingMovies: [...moviePAGE1, ...moviePAGE2] }));
+  dispatch(
+    addMovies({
+      upcomingMovies: [...upcomingMoviesPAGE1, ...upcomingMoviesPAGE2],
+      nowPlaying: [...nowPlayingMoviesPAGE1, ...nowPlayingMoviesPAGE2],
+    })
+  );
 
   return (
     <div className="App">
