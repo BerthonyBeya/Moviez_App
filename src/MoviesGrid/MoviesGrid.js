@@ -3,7 +3,6 @@ import MoviesBox from "./MovieBox/MoviesBox";
 import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
 import uuid from "react-uuid";
-import { Container } from "react-bootstrap";
 
 const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
