@@ -11,6 +11,7 @@ import MoviesSection from "./MoviesSection/MoviesSection";
 import SeriesSection from "./SeriesSection/SeriesSection";
 
 function App() {
+  // Upcoming movies states
   const [moviePAGE1, setMoviePAGE1] = useState([]);
   const [moviePAGE2, setMoviePAGE2] = useState([]);
 
@@ -26,30 +27,36 @@ function App() {
     // Upcoming movies API
     const fetchingAllMovies = () => {
       const endpoints = [
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+        "https://api.themoviedb.org/3/movie1/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+        "https://api.themoviedb.org/3/movie1/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
       ];
 
-      axios.all(
-        endpoints.map(async (endpoint, index) => {
-          const moviepage = await axios.get(endpoint);
-          if (index === 0) {
-            setMoviePAGE1(moviepage.data.results);
-          }
+      try {
+        axios.all(
+          endpoints.map(async (endpoint, index) => {
+            const moviepage = await axios.get(endpoint);
+            if (index === 0) {
+              setMoviePAGE1(moviepage.data.results);
+            }
 
-          setMoviePAGE2(moviepage.data.results);
-        })
-      );
+            if (index === 1) {
+              setMoviePAGE2(moviepage.data.results);
+            }
+          })
+        );
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     fetchingAllMovies();
   }, []);
 
-  console.log(moviePAGE1);
+  /* console.log(moviePAGE1);
   console.log(moviePAGE2);
-
+ */
   // Adding upcoming movies in redux
-  dispatch(addMovies({ movies: [...moviePAGE1, ...moviePAGE2] }));
+  dispatch(addMovies({ upcomingMovies: [...moviePAGE1, ...moviePAGE2] }));
 
   return (
     <div className="App">

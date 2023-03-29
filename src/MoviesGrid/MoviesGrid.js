@@ -1,5 +1,6 @@
 import "./MoviesGrid.scss";
 import MoviesBox from "./MovieBox/MoviesBox";
+import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
 import uuid from "react-uuid";
 
@@ -7,6 +8,8 @@ const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
     return state.movies.value;
   });
+
+  console.log(movies);
 
   return (
     <div className="movies">
@@ -16,13 +19,16 @@ const MoviesGrid = (props) => {
         </div>
         <span></span>
       </span>
-      <div className="movies-grid">
-        {movies?.movies
-          ? movies.movies.map((el) => {
-              return <MoviesBox poster={el.poster_path} key={uuid()}/>;
-            })
-          : ""}
-      </div>
+      {movies?.upcomingMovies?.length !== 0 ? (
+        <div className="movies-grid">
+          {/* Display upcoming movies */}
+          {movies?.upcomingMovies?.map((el) => {
+            return <MoviesBox poster={el.poster_path} key={uuid()} />;
+          })}
+        </div>
+      ) : (
+        <NotFound type={"Movies"} />
+      )}
     </div>
   );
 };
