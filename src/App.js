@@ -26,7 +26,7 @@ function App() {
   ]);
 
   useEffect(() => {
-    // Upcoming movies API
+    // Movies API
     const fetchingAllMovies = () => {
       const endpoints = [
         "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",

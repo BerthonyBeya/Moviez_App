@@ -40,7 +40,7 @@ const MoviesGrid = (props) => {
               })}
             </div>
           ) : (
-            <NotFound type={"Movies"} />
+            <NotFound type={"Shows"} />
           )
         ) : props.type === "Now Playing Movies" ? (
           movies?.nowPlaying?.length !== 0 ? (
