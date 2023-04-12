@@ -11,7 +11,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="navbar-ul__link">
-            <a href="/movies">Now Playing Moviessss</a>
+            <a href="/movies">Now Playing Movies</a>
           </li>
           <li className="navbar-ul__link">
             <a href="/series">Now Playing Tv Shows</a>
