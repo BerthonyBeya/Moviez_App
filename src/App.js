@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { addMovies } from "./store/features/moviesSlice";
-import { addShows, showsSlice } from "./store/features/showsSlice";
+import { addShows} from "./store/features/showsSlice";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
