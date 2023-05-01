@@ -11,13 +11,13 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="navbar-ul__link">
-            <a href="/movies">Now Playing Movies</a>
+            <Link to="/nowplayingmovies">Now Playing Movies</Link>
           </li>
           <li className="navbar-ul__link">
-            <a href="/series">Now Playing Tv Shows</a>
+            <Link to="/nowplayingshows">Now Playing Tv Shows</Link>
           </li>
           <li className="navbar-ul__link">
-            <a href="/favorite">Favorite</a>
+            <Link to="/favorite">Favorite</Link>
           </li>
         </ul>
       </nav>

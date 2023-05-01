@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import MoviesSection from "./MoviesSection/MoviesSection";
 import SeriesSection from "./SeriesSection/SeriesSection";
+import PageNotFound from "./PageNotFound/PageNotFound";
 
 function App() {
   // Movies states
@@ -30,8 +31,9 @@ function App() {
 
   const route = createBrowserRouter([
     { path: "/", element: <HomePage /> },
-    { path: "/movies", element: <MoviesSection /> },
-    { path: "/series", element: <SeriesSection /> },
+    { path: "/nowplayingmovies", element: <MoviesSection /> },
+    { path: "/nowplayingshows", element: <SeriesSection /> },
+    { path: "*", element: <PageNotFound/> },
   ]);
 
   useEffect(() => {
@@ -156,15 +158,13 @@ function App() {
     })
   );
 
+  // Sending on air shows to redux store
   dispatch(
     addShows({
       showsOnAir: [...showsOnAirPAGE1, ...showsOnAirPAGE2, ...showsOnAirPAGE3],
       popularTvShows: [...popularTvShowsPAGE1, ...popularTvShowsPAGE2],
     })
   );
-
-  // Sending on air shows to redux store
-  addShows({ showsOnAir: [] });
 
   return (
     <div className="App">

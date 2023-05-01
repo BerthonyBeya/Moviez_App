@@ -3,6 +3,7 @@ import MoviesBox from "./MovieBox/MoviesBox";
 import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
 
+
 const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
     return state.movies.value;
@@ -11,8 +12,6 @@ const MoviesGrid = (props) => {
   const shows = useSelector((state) => {
     return state.shows.value;
   });
-
-  console.log(shows);
 
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
@@ -27,9 +26,11 @@ const MoviesGrid = (props) => {
         return renderMovieGrid(shows.popularTvShows, props.type);
 
       default:
-        <h1>Unknown movie type</h1>;
+        return <NotFound type={"404 Page"} />;
     }
   };
+
+  
 
   // Rendering specific movies or tv shows
   const renderMovieGrid = (moviesArray, type) => {
