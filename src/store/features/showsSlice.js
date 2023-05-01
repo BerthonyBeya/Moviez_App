@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const showsSlice = createSlice({
   name: "shows",
-  initialState: { showsOnAir: [] },
+  initialState: { showsOnAir: [], popularTvShows: [] },
   reducers: {
     addShows: (state, action) => {
       state.value = action.payload;

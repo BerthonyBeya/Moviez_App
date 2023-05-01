@@ -12,6 +12,7 @@ const MoviesGrid = (props) => {
     return state.shows.value;
   });
 
+  console.log(shows);
 
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
@@ -22,6 +23,9 @@ const MoviesGrid = (props) => {
         return renderMovieGrid(movies.nowPlaying, props.type);
       case "Now Playing Shows":
         return renderMovieGrid(shows.showsOnAir, props.type);
+      case "Popular TV Shows":
+        return renderMovieGrid(shows.popularTvShows, props.type);
+
       default:
         <h1>Unknown movie type</h1>;
     }

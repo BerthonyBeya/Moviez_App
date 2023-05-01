@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { addMovies } from "./store/features/moviesSlice";
-import { addShows} from "./store/features/showsSlice";
+import { addShows } from "./store/features/showsSlice";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
@@ -17,10 +17,14 @@ function App() {
   const [upcomingMoviesPAGE2, setUpcomingMoviesPAGE2] = useState([]);
   const [nowPlayingMoviesPAGE1, setNowPlayingMoviesPAGE1] = useState([]);
   const [nowPlayingMoviesPAGE2, setNowPlayingMoviesPAGE2] = useState([]);
+  const [nowPlayingMoviesPAGE3, setNowPlayingMoviesPAGE3] = useState([]);
 
   // Shows states
   const [showsOnAirPAGE1, setShowsOnAirPAGE1] = useState([]);
   const [showsOnAirPAGE2, setShowsOnAirPAGE2] = useState([]);
+  const [showsOnAirPAGE3, setShowsOnAirPAGE3] = useState([]);
+  const [popularTvShowsPAGE1, setPopularTvShowsPAGE1] = useState([]);
+  const [popularTvShowsPAGE2, setPopularTvShowsPAGE2] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -38,6 +42,7 @@ function App() {
         "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
         "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
         "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
       ];
 
       // Running all promises asynchronously using Promise.allSettled()
@@ -74,6 +79,12 @@ function App() {
           ? responses[3].value.data.results
           : ""
       );
+      // Page 3
+      setNowPlayingMoviesPAGE3(
+        responses[4]?.value?.data?.results
+          ? responses[4].value.data.results
+          : ""
+      );
     };
 
     // Shows APIs
@@ -81,6 +92,9 @@ function App() {
       const endpoints = [
         "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
         "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+        "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
+        "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+        "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
       ];
 
       const responses = await Promise.allSettled(
@@ -103,6 +117,25 @@ function App() {
           ? responses[1].value.data.results
           : ""
       );
+      //PAGE3
+      setShowsOnAirPAGE3(
+        responses[2]?.value?.data?.results
+          ? responses[2].value.data.results
+          : ""
+      );
+
+      // PAGE 1
+      setPopularTvShowsPAGE1(
+        responses[3]?.value?.data?.results
+          ? responses[3].value.data.results
+          : ""
+      );
+      // PAGE 2
+      setPopularTvShowsPAGE2(
+        responses[4]?.value?.data?.results
+          ? responses[4].value.data.results
+          : ""
+      );
 
       /* console.log(results[0].value.data.results); */
     };
@@ -115,13 +148,18 @@ function App() {
   dispatch(
     addMovies({
       upcomingMovies: [...upcomingMoviesPAGE1, ...upcomingMoviesPAGE2],
-      nowPlaying: [...nowPlayingMoviesPAGE1, ...nowPlayingMoviesPAGE2],
+      nowPlaying: [
+        ...nowPlayingMoviesPAGE1,
+        ...nowPlayingMoviesPAGE2,
+        ...nowPlayingMoviesPAGE3,
+      ],
     })
   );
 
   dispatch(
     addShows({
-      showsOnAir: [...showsOnAirPAGE1, ...showsOnAirPAGE2],
+      showsOnAir: [...showsOnAirPAGE1, ...showsOnAirPAGE2, ...showsOnAirPAGE3],
+      popularTvShows: [...popularTvShowsPAGE1, ...popularTvShowsPAGE2],
     })
   );
 
