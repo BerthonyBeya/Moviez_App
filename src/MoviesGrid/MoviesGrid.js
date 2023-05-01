@@ -2,14 +2,43 @@ import "./MoviesGrid.scss";
 import MoviesBox from "./MovieBox/MoviesBox";
 import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
-import uuid from "react-uuid";
 
 const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
     return state.movies.value;
   });
 
-  console.log(movies);
+  const shows = useSelector((state) => {
+    return state.shows.value;
+  });
+
+
+  // Checking which type of movies or tv shows to display
+  const renderMovies = () => {
+    switch (props.type) {
+      case "Upcoming Movies":
+        return renderMovieGrid(movies.upcomingMovies, props.type);
+      case "Now Playing Movies":
+        return renderMovieGrid(movies.nowPlaying, props.type);
+      case "Now Playing Shows":
+        return renderMovieGrid(shows.showsOnAir, props.type);
+      default:
+        <h1>Unknown movie type</h1>;
+    }
+  };
+
+  // Rendering specific movies or tv shows
+  const renderMovieGrid = (moviesArray, type) => {
+    return moviesArray?.length !== 0 ? (
+      <div className="movies-grid">
+        {moviesArray?.map((el) => {
+          return <MoviesBox poster={el.poster_path} key={el.id} />;
+        })}
+      </div>
+    ) : (
+      <NotFound type={type} />
+    );
+  };
 
   return (
     <div className="movies-container">
@@ -20,42 +49,7 @@ const MoviesGrid = (props) => {
           </div>
           <span></span>
         </span>
-        {props.type === "Upcoming Movies" ? (
-          movies?.upcomingMovies?.length !== 0 ? (
-            <div className="movies-grid">
-              {/* Display upcoming movies */}
-              {movies?.upcomingMovies?.map((el) => {
-                return <MoviesBox poster={el.poster_path} key={uuid()} />;
-              })}
-            </div>
-          ) : (
-            <NotFound type={"Movies"} />
-          )
-        ) : props.type === "Upcoming Shows" ? (
-          movies?.upcomingMovies?.length !== 0 ? (
-            <div className="movies-grid">
-              {/* Display upcoming movies */}
-              {movies?.upcomingMovies?.map((el) => {
-                return <MoviesBox poster={el.poster_path} key={uuid()} />;
-              })}
-            </div>
-          ) : (
-            <NotFound type={"Shows"} />
-          )
-        ) : props.type === "Now Playing Movies" ? (
-          movies?.nowPlaying?.length !== 0 ? (
-            <div className="movies-grid">
-              {/* Display upcoming movies */}
-              {movies?.nowPlaying?.map((el) => {
-                return <MoviesBox poster={el.poster_path} key={uuid()} />;
-              })}
-            </div>
-          ) : (
-            <NotFound type={"Movies"} />
-          )
-        ) : (
-          ""
-        )}
+        {renderMovies()}
       </div>
     </div>
   );

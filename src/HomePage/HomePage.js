@@ -10,7 +10,7 @@ const HomePage = () => {
       <Navbar />
       <HomeCarousel />
       <MoviesGrid type={"Upcoming Movies"} />
-      <MoviesGrid type={"Upcoming Shows"} />
+      <MoviesGrid type={"Top Rated Shows"} />
       <Footer />
     </Fragment>
   );
