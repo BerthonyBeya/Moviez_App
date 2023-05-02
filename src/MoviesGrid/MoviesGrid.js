@@ -2,7 +2,7 @@ import "./MoviesGrid.scss";
 import MoviesBox from "./MovieBox/MoviesBox";
 import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
-
+import LoaderComponent from "../LoaderComponent/LoaderComponent";
 
 const MoviesGrid = (props) => {
   const movies = useSelector((state) => {
@@ -30,7 +30,7 @@ const MoviesGrid = (props) => {
     }
   };
 
-  
+  // <NotFound type={"404 Page"} />
 
   // Rendering specific movies or tv shows
   const renderMovieGrid = (moviesArray, type) => {
@@ -41,7 +41,7 @@ const MoviesGrid = (props) => {
         })}
       </div>
     ) : (
-      <NotFound type={type} />
+      <LoaderComponent />
     );
   };
 

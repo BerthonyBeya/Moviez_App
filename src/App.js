@@ -32,7 +32,7 @@ function App() {
   const route = createBrowserRouter([
     { path: "/", element: <HomePage /> },
     { path: "/nowplayingmovies", element: <MoviesSection /> },
-    { path: "/nowplayingshows", element: <SeriesSection /> },
+    { path: "/nowplayingshows", element: <SeriesSection /> }, 
     { path: "*", element: <PageNotFound/> },
   ]);
 
