@@ -32,121 +32,130 @@ function App() {
   const route = createBrowserRouter([
     { path: "/", element: <HomePage /> },
     { path: "/nowplayingmovies", element: <MoviesSection /> },
-    { path: "/nowplayingshows", element: <SeriesSection /> }, 
-    { path: "*", element: <PageNotFound/> },
+    { path: "/nowplayingshows", element: <SeriesSection /> },
+    { path: "*", element: <PageNotFound /> },
   ]);
 
+  const UPCOMING_MOVIES_ENDPOINS = [
+    "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+    "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+  ];
+
+  const NOW_PLAYING_MOVIES_ENDPOINTS = [
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
+  ];
+
+  const SHOWS_ON_AIR_ENDPOINTS = [
+    "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+    "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+    "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
+  ];
+
+  const POPULAR_TV_SHOWS_ENDPOINTS = [
+    "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
+    "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+  ];
+
   useEffect(() => {
-    // Movies APIs
-    const fetchingAllMovies = async () => {
-      const endpoints = [
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
-      ];
-
-      // Running all promises asynchronously using Promise.allSettled()
+    const fetchAllData = async (endpointsArray, type) => {
       const responses = await Promise.allSettled(
-        endpoints.map((endpoint) => axios.get(endpoint))
-      );
-
-      // Adding the fetched upcoming movies to the states
-      // Page 1
-      setUpcomingMoviesPAGE1(
-        responses[0]?.value?.data?.results
-          ? responses[0].value.data.results
-          : ""
-      );
-
-      // Page 2
-      setUpcomingMoviesPAGE2(
-        responses[1]?.value?.data?.results
-          ? responses[1].value.data.results
-          : ""
-      );
-
-      // Adding the fetched now playing movies to the states
-      // Page 1
-      setNowPlayingMoviesPAGE1(
-        responses[2]?.value?.data?.results
-          ? responses[2].value.data.results
-          : ""
-      );
-
-      // Page 2
-      setNowPlayingMoviesPAGE2(
-        responses[3]?.value?.data?.results
-          ? responses[3].value.data.results
-          : ""
-      );
-      // Page 3
-      setNowPlayingMoviesPAGE3(
-        responses[4]?.value?.data?.results
-          ? responses[4].value.data.results
-          : ""
-      );
-    };
-
-    // Shows APIs
-    const fetchingAllShows = async () => {
-      const endpoints = [
-        "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-        "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-        "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
-        "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-        "https://api.themoviedb.org/3/tv/popular?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-      ];
-
-      const responses = await Promise.allSettled(
-        endpoints.map((endpoint) => {
-          return axios(endpoint);
+        endpointsArray.map((endpoint) => {
+          return axios.get(endpoint);
         })
       );
 
-      // Adding the fetched showsOnAir to the states
-      // PAGE1
-      setShowsOnAirPAGE1(
-        responses[0]?.value?.data?.results
-          ? responses[0].value.data.results
-          : ""
-      );
+      if (type === "movies") {
+        // Adding the fetched upcoming movies to the states
+        // Page 1
+        setUpcomingMoviesPAGE1(
+          responses[0]?.value?.data?.results
+            ? responses[0].value.data.results
+            : ""
+        );
 
-      //PAGE2
-      setShowsOnAirPAGE2(
-        responses[1]?.value?.data?.results
-          ? responses[1].value.data.results
-          : ""
-      );
-      //PAGE3
-      setShowsOnAirPAGE3(
-        responses[2]?.value?.data?.results
-          ? responses[2].value.data.results
-          : ""
-      );
+        // Page 2
+        setUpcomingMoviesPAGE2(
+          responses[1]?.value?.data?.results
+            ? responses[1].value.data.results
+            : ""
+        );
 
-      // PAGE 1
-      setPopularTvShowsPAGE1(
-        responses[3]?.value?.data?.results
-          ? responses[3].value.data.results
-          : ""
-      );
-      // PAGE 2
-      setPopularTvShowsPAGE2(
-        responses[4]?.value?.data?.results
-          ? responses[4].value.data.results
-          : ""
-      );
+        // Adding the fetched now playing movies to the states
+        // Page 1
+        setNowPlayingMoviesPAGE1(
+          responses[2]?.value?.data?.results
+            ? responses[2].value.data.results
+            : ""
+        );
 
-      /* console.log(results[0].value.data.results); */
+        // Page 2
+        setNowPlayingMoviesPAGE2(
+          responses[3]?.value?.data?.results
+            ? responses[3].value.data.results
+            : ""
+        );
+        // Page 3
+        setNowPlayingMoviesPAGE3(
+          responses[4]?.value?.data?.results
+            ? responses[4].value.data.results
+            : ""
+        );
+      }
+
+      if (type === "shows") {
+        // Adding the fetched showsOnAir to the states
+        // PAGE1
+        setShowsOnAirPAGE1(
+          responses[0]?.value?.data?.results
+            ? responses[0].value.data.results
+            : ""
+        );
+
+        //PAGE2
+        setShowsOnAirPAGE2(
+          responses[1]?.value?.data?.results
+            ? responses[1].value.data.results
+            : ""
+        );
+        //PAGE3
+        setShowsOnAirPAGE3(
+          responses[2]?.value?.data?.results
+            ? responses[2].value.data.results
+            : ""
+        );
+
+        // PAGE 1
+        setPopularTvShowsPAGE1(
+          responses[3]?.value?.data?.results
+            ? responses[3].value.data.results
+            : ""
+        );
+        // PAGE 2
+        setPopularTvShowsPAGE2(
+          responses[4]?.value?.data?.results
+            ? responses[4].value.data.results
+            : ""
+        );
+      }
     };
 
-    fetchingAllMovies();
-    fetchingAllShows();
+    // Calling the fetchAllData method
+    fetchAllData(
+      [...UPCOMING_MOVIES_ENDPOINS, ...NOW_PLAYING_MOVIES_ENDPOINTS],
+      "movies"
+    );
+
+    fetchAllData(
+      [...SHOWS_ON_AIR_ENDPOINTS, ...POPULAR_TV_SHOWS_ENDPOINTS],
+      "shows"
+    );
   }, []);
 
-  // Sending upcoming movies to redux store
+  
+
+  // Sending movies to redux store
   dispatch(
     addMovies({
       upcomingMovies: [...upcomingMoviesPAGE1, ...upcomingMoviesPAGE2],
@@ -158,7 +167,7 @@ function App() {
     })
   );
 
-  // Sending on air shows to redux store
+  // Sending shows to the redux store
   dispatch(
     addShows({
       showsOnAir: [...showsOnAirPAGE1, ...showsOnAirPAGE2, ...showsOnAirPAGE3],
