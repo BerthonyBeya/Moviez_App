@@ -24,6 +24,8 @@ const MoviesGrid = (props) => {
         return renderMovieGrid(shows.showsOnAir, props.type);
       case "Popular TV Shows":
         return renderMovieGrid(shows.popularTvShows, props.type);
+      case "Favorites":
+        return renderMovieGrid([], props.type);
 
       default:
         return <NotFound type={"404 Page"} />;
@@ -40,6 +42,8 @@ const MoviesGrid = (props) => {
           return <MoviesBox poster={el.poster_path} key={el.id} />;
         })}
       </div>
+    ) : type === "Favorites" ? (
+      <NotFound type={"Favorites"} />
     ) : (
       <LoaderComponent />
     );

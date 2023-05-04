@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link to="/nowplayingshows">Now Playing Tv Shows</Link>
           </li>
           <li className="navbar-ul__link">
-            <Link to="/favorite">Favorite</Link>
+            <Link to="/favorites">Favorites</Link>
           </li>
         </ul>
       </nav>

@@ -11,6 +11,7 @@ import HomePage from "./HomePage/HomePage";
 import MoviesSection from "./MoviesSection/MoviesSection";
 import SeriesSection from "./SeriesSection/SeriesSection";
 import PageNotFound from "./PageNotFound/PageNotFound";
+import FavoriteComponent from "./FavoriteComponent/FavoriteComponent";
 
 function App() {
   // Movies states
@@ -33,6 +34,7 @@ function App() {
     { path: "/", element: <HomePage /> },
     { path: "/nowplayingmovies", element: <MoviesSection /> },
     { path: "/nowplayingshows", element: <SeriesSection /> },
+    { path: "/favorites", element: <FavoriteComponent /> },
     { path: "*", element: <PageNotFound /> },
   ]);
 
@@ -152,7 +154,6 @@ function App() {
       "shows"
     );
   }, []);
-
 
   // Sending movies to redux store
   dispatch(
