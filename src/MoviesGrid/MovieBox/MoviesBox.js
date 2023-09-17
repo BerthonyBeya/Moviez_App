@@ -8,7 +8,7 @@ const MoviesBox = (props) => {
       <div className="movies-grid__quality">
         <div>
           {" "}
-          <p>HD</p>
+          <p>{props.rating}</p>
         </div>
       </div>
       <div className="movies-grid__overlay">

@@ -5,13 +5,17 @@ import { useSelector } from "react-redux";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
 
 const MoviesGrid = (props) => {
+  // Fetching Movies from the redux
   const movies = useSelector((state) => {
     return state.movies.value;
   });
 
+  // Fetching Tv Shows from the redux
   const shows = useSelector((state) => {
     return state.shows.value;
   });
+
+  console.log(movies);
 
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
@@ -39,7 +43,13 @@ const MoviesGrid = (props) => {
     return moviesArray?.length !== 0 ? (
       <div className="movies-grid">
         {moviesArray?.map((el) => {
-          return <MoviesBox poster={el.poster_path} key={el.id} />;
+          return (
+            <MoviesBox
+              rating={el.vote_average}
+              poster={el.poster_path}
+              key={el.id}
+            />
+          );
         })}
       </div>
     ) : type === "Favorites" ? (
