@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Navbar />
-      <HomeCarousel />
+      <HomeCarousel type={"homePage"} />
       <MoviesGrid type={"Upcoming Movies"} />
       <MoviesGrid type={"Popular TV Shows"} />
       <Footer />

@@ -3,6 +3,7 @@ import MoviesBox from "./MovieBox/MoviesBox";
 import NotFound from "../NotFound/NotFound";
 import { useSelector } from "react-redux";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
+import uuid from "react-uuid";
 
 const MoviesGrid = (props) => {
   // Fetching Movies from the redux
@@ -14,8 +15,6 @@ const MoviesGrid = (props) => {
   const shows = useSelector((state) => {
     return state.shows.value;
   });
-
-  console.log(movies);
 
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
@@ -47,7 +46,7 @@ const MoviesGrid = (props) => {
             <MoviesBox
               rating={el.vote_average}
               poster={el.poster_path}
-              key={el.id}
+              key={uuid()}
             />
           );
         })}
