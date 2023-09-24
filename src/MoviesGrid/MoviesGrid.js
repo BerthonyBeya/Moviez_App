@@ -21,7 +21,6 @@ const MoviesGrid = (props) => {
     return state?.search?.value?.search;
   });
 
-
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
     switch (props.type) {
@@ -45,25 +44,33 @@ const MoviesGrid = (props) => {
 
   // <NotFound type={"404 Page"} />
 
-  // Rendering specific movies or tv shows
+  // Render movies or tv shows if the array is not empty
   const renderMovieGrid = (moviesArray, type) => {
-    return moviesArray?.length !== 0 ? (
-      <div className="movies-grid">
-        {moviesArray?.map((el) => {
-          return (
-            <MoviesBox
-              rating={el.vote_average}
-              poster={el.poster_path}
-              key={uuid()}
-            />
-          );
-        })}
-      </div>
-    ) : type === "Favorites" ? (
-      <NotFound type={"Favorites"} />
-    ) : (
-      <LoaderComponent />
-    );
+    if (moviesArray?.length !== 0) {
+      return (
+        <div className="movies-grid">
+          {moviesArray?.map((el) => {
+            return (
+              <MoviesBox
+                rating={el.vote_average}
+                poster={el.poster_path}
+                key={uuid()}
+              />
+            );
+          })}
+        </div>
+      );
+    }
+
+    // If the type is "Favorites" and the array is empty render this
+    if (type === "Favorites" && moviesArray?.length === 0) {
+      return <NotFound type={"Favorites"} />;
+    }
+
+    // If it's none of the above the return a loader
+    if (moviesArray?.length === 0) {
+      return <LoaderComponent />;
+    }
   };
 
   return (
