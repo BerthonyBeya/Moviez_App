@@ -52,8 +52,6 @@ const SearchComponent = () => {
     fetchSearchedData();
   }, [id]);
 
-  console.log(results);
-
   // Sending data to the redux store
   const dispatch = useDispatch();
   dispatch(addSearch({ search: results }));
