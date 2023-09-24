@@ -1,10 +1,10 @@
-import "./App.scss";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { addMovies } from "./store/features/moviesSlice";
 import { addShows } from "./store/features/showsSlice";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.scss";
 
 // Pages
 import HomePage from "./HomePage/HomePage";
@@ -12,6 +12,7 @@ import MoviesSection from "./MoviesSection/MoviesSection";
 import SeriesSection from "./SeriesSection/SeriesSection";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import FavoriteComponent from "./FavoriteComponent/FavoriteComponent";
+import SearchComponent from "./SearchComponent/SearchComponent";
 
 function App() {
   // Movies states
@@ -34,6 +35,7 @@ function App() {
     { path: "/", element: <HomePage /> },
     { path: "/nowplayingmovies", element: <MoviesSection /> },
     { path: "/nowplayingshows", element: <SeriesSection /> },
+    { path: "/search/:id", element: <SearchComponent /> },
     { path: "/favorites", element: <FavoriteComponent /> },
     { path: "*", element: <PageNotFound /> },
   ]);
@@ -174,7 +176,6 @@ function App() {
       popularTvShows: [...popularTvShowsPAGE1, ...popularTvShowsPAGE2],
     })
   );
-
 
   return (
     <div className="App">

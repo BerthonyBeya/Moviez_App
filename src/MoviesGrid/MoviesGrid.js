@@ -8,13 +8,19 @@ import uuid from "react-uuid";
 const MoviesGrid = (props) => {
   // Fetching Movies from the redux
   const movies = useSelector((state) => {
-    return state.movies.value;
+    return state?.movies?.value;
   });
 
   // Fetching Tv Shows from the redux
   const shows = useSelector((state) => {
-    return state.shows.value;
+    return state?.shows?.value;
   });
+
+  // Fetching Searched data
+  const searched = useSelector((state) => {
+    return state?.search?.value?.search;
+  });
+
 
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
@@ -27,6 +33,8 @@ const MoviesGrid = (props) => {
         return renderMovieGrid(shows.showsOnAir, props.type);
       case "Popular TV Shows":
         return renderMovieGrid(shows.popularTvShows, props.type);
+      case "Searched":
+        return renderMovieGrid(searched, props.type);
       case "Favorites":
         return renderMovieGrid([], props.type);
 

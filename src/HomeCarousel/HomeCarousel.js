@@ -32,7 +32,6 @@ const HomeCarousel = (props) => {
             return [...currentState, result.data.results[0]];
           });
         };
-
         fetchMovie();
       });
     };
