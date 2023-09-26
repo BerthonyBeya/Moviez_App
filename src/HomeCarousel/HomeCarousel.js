@@ -89,10 +89,15 @@ const HomeCarousel = (props) => {
     searchNowPlayingTvShows();
   }, []);
 
-  
+  // Get movies and shows IDs
+  const getID = (id) => {
+    console.log(id);
+  };
+
+  /* console.log(homeMovies); */
 
   const addingCarouselImages = () => {
-    // Display this Carousel Infos if it's "HomePage"
+    // Display this Carousel if it's "HomePage"
     if (props.type === "homePage") {
       return homeMovies.map((movie) => {
         return (
@@ -124,7 +129,10 @@ const HomeCarousel = (props) => {
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
                 <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                  <button
+                    className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+                    onClick={() => getID(movie.id)}
+                  >
                     <p>
                       <FaPlay className="carousel-movie-buttons__watch__icon" />
                       Watch now
@@ -186,7 +194,10 @@ const HomeCarousel = (props) => {
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
                 <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                  <button
+                    className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+                    onClick={() => getID(movie.id)}
+                  >
                     <p>
                       <FaPlay className="carousel-movie-buttons__watch__icon" />
                       Watch now
@@ -248,7 +259,10 @@ const HomeCarousel = (props) => {
               <p className="carousel-movie__bio">{show.overview}</p>
               <div className="carousel-movie-buttons">
                 <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                  <button
+                    className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+                    onClick={() => getID(show.id)}
+                  >
                     <p>
                       <FaPlay className="carousel-movie-buttons__watch__icon" />
                       Watch now

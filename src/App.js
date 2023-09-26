@@ -13,6 +13,7 @@ import SeriesSection from "./SeriesSection/SeriesSection";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import FavoriteComponent from "./FavoriteComponent/FavoriteComponent";
 import SearchComponent from "./SearchComponent/SearchComponent";
+import DetailsComponent from "./DetailsComponent/DetailsComponent";
 
 function App() {
   // Movies states
@@ -37,6 +38,7 @@ function App() {
     { path: "/nowplayingshows", element: <SeriesSection /> },
     { path: "/search/:id", element: <SearchComponent /> },
     { path: "/favorites", element: <FavoriteComponent /> },
+    { path: "/details/:id", element: <DetailsComponent /> },
     { path: "*", element: <PageNotFound /> },
   ]);
 
