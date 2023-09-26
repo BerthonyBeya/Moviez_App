@@ -6,8 +6,8 @@ import "./DetailsComponent.scss";
 // "Show"  The Challenge: USA          id:203423 
 
 const DetailsComponent = () => {
-  const [movieDetails, setMovieDetails] = useState("Movie details is empty");
-  const [showDetails, setShowDetails] = useState("Show details is empty");
+  const [movieDetails, setMovieDetails] = useState("Movie details state is empty");
+  const [showDetails, setShowDetails] = useState("Tv Show details state is empty");
 
   useEffect(() => {
     const fetchSearchedData = async () => {
