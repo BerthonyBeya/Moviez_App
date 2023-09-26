@@ -35,8 +35,8 @@ const DetailsComponent = () => {
     fetchSearchedData();
   }, []);
 
-  console.log(movieDetails);
-  console.log(showDetails);
+  /* console.log(movieDetails);
+  console.log(showDetails); */
 
   return (
     <div>
