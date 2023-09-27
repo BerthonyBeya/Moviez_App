@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import "./DetailsComponent.scss";
 
 // "Movie" gardians of the galaxy      id:447365
-// "Show"  The Challenge: USA          id:203423 
+// "Show"  The Challenge: USA          id:203423
 
 const DetailsComponent = () => {
-  const [movieDetails, setMovieDetails] = useState("Movie details state is empty");
-  const [showDetails, setShowDetails] = useState("Tv Show details state is empty");
+  const [movieDetails, setMovieDetails] = useState(
+    "Movie details state is empty"
+  );
+  const [showDetails, setShowDetails] = useState(
+    "Tv Show details state is empty"
+  );
 
   useEffect(() => {
     const fetchSearchedData = async () => {
@@ -39,9 +45,53 @@ const DetailsComponent = () => {
   console.log(showDetails);
 
   return (
-    <div>
-      <h1>Details Component</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="details-container">
+        <div className="details">
+          <div>
+            <img
+              className="details__poster"
+              src="/images/image.jpg"
+              alt="img"
+            />
+          </div>
+          <div className="details-infos">
+            <h1 className="details-infos__Title">
+              <span>Title:&nbsp;</span> Avengers
+            </h1>
+            <ul>
+              <li className="details-infos__more">
+                <span>Release date:&nbsp;</span> 250000000
+              </li>
+              <li className="details-infos__more">
+                <span>Revenue:&nbsp;</span> 845430302
+              </li>
+              <li className="details-infos__more">
+                <span>Original language:&nbsp;</span> en
+              </li>
+              <li className="details-infos__more">
+                <span>Budget:&nbsp;</span> 250000000
+              </li>
+              <li className="details-infos__more">
+                <span>Status:&nbsp;</span> Released
+              </li>
+              <li className="details-infos__more">
+                <span>Genres:&nbsp;</span> Science Fiction, Adventure, Action
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="overview">
+          <span>Overview:</span>
+          <p>Peter Quill, still reeling from the loss of Gamora, must rally his
+          team around him to defend the universe along... Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Error dolorum repudiandae
+          aspernatur distinctio similique, sint eos totam vero nam ipsum?</p>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
