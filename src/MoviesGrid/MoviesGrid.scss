@@ -6,7 +6,7 @@
 
 .movies {
     background: $primary-color;
-    min-height: 87.6vh;
+    min-height: 90vh;
     clip-path: polygon(50% 0, 68% 0, 100% 0, 100% 86%, 81% 100%, 50% 100%, 27% 100%, 0 100%, 0 4%, 8% 0);
 
     &>span {

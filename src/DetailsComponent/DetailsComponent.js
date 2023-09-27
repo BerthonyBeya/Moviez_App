@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FaStar, FaPlay, FaClipboardList } from "react-icons/fa";
+import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import "./DetailsComponent.scss";
@@ -80,14 +82,37 @@ const DetailsComponent = () => {
                 <span>Genres:&nbsp;</span> Science Fiction, Adventure, Action
               </li>
             </ul>
+            <div className="carousel-movie-buttons details--buttons">
+              <span>
+                <button
+                  className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+                  onClick={""}
+                >
+                  <p>
+                    <FaPlay className="carousel-movie-buttons__watch__icon" />
+                    Watch now
+                  </p>
+                </button>
+              </span>
+              <span>
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+                  <p>
+                    <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
+                    Add to list
+                  </p>
+                </button>
+              </span>
+            </div>
           </div>
         </div>
         <div className="overview">
           <span>Overview:</span>
-          <p>Peter Quill, still reeling from the loss of Gamora, must rally his
-          team around him to defend the universe along... Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Error dolorum repudiandae
-          aspernatur distinctio similique, sint eos totam vero nam ipsum?</p>
+          <p>
+            Peter Quill, still reeling from the loss of Gamora, must rally his
+            team around him to defend the universe along... Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Error dolorum repudiandae
+            aspernatur distinctio similique, sint eos totam vero nam ipsum?
+          </p>
         </div>
       </div>
       <Footer />
