@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FaStar, FaPlay, FaClipboardList } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
@@ -84,10 +84,7 @@ const DetailsComponent = () => {
             </ul>
             <div className="carousel-movie-buttons details--buttons">
               <span>
-                <button
-                  className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
-                  onClick={""}
-                >
+                <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                   <p>
                     <FaPlay className="carousel-movie-buttons__watch__icon" />
                     Watch now
