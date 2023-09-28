@@ -45,11 +45,11 @@ const DetailsComponent = () => {
     };
 
     fetchSearchedData();
-  }, []);
+  }, [id]);
+
 
   return (
     <>
-    
       <Navbar />
       <div className="details-container">
         {/* If the movie state is an onject then show this */}
