@@ -5,6 +5,7 @@ import { FaPlay } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import LoaderComponent from "../LoaderComponent/LoaderComponent";
 import "./DetailsComponent.scss";
 
 // "Movie" gardians of the galaxy      id:447365
@@ -46,11 +47,16 @@ const DetailsComponent = () => {
     fetchSearchedData();
   }, [id]);
 
-
   return (
     <>
       <Navbar />
       <div className="details-container">
+        {/* /* If both Api fail, show loader*/}
+        {typeof movieDetails !== "object" && typeof showDetails !== "object" ? (
+          <LoaderComponent />
+        ) : (
+          ""
+        )}
         {/* If the movie state is an onject then show this */}
         {typeof movieDetails === "object" ? (
           <div className="details">
@@ -200,7 +206,14 @@ const DetailsComponent = () => {
           ""
         )}
       </div>
-      <Footer />
+      {/* If both Api fail, show this footer*/}
+      {typeof movieDetails !== "object" && typeof showDetails !== "object" ? (
+        <div className="details-container__footer">
+          <Footer />
+        </div>
+      ) : (
+        <Footer />
+      )}
     </>
   );
 };
