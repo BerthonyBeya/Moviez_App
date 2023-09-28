@@ -5,7 +5,6 @@ import { FaPlay } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import NotFound from "../NotFound/NotFound";
 import "./DetailsComponent.scss";
 
 // "Movie" gardians of the galaxy      id:447365
