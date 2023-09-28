@@ -11,7 +11,6 @@ const HomeCarousel = (props) => {
   const [homeMovies, setHomeMovies] = useState([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
   const [nowPlayingTvShows, setNowPlayingTvShows] = useState([]);
-  const [detailsID, setDetailsID] = useState("");
 
   const navigate = useNavigate();
 
