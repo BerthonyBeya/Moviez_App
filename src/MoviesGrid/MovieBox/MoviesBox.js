@@ -1,8 +1,16 @@
 import "../MoviesGrid.scss";
 import { FaPlay, FaClipboardList } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const MoviesBox = (props) => {
+  const navigate = useNavigate();
+
+  // Navigating to movies or shows details page
+  const detailsHandler = () => {
+    navigate(`/details/${props.id}`);
+  };
+
   return (
     <div className="movies-grid__movie">
       <div className="movies-grid__quality">
@@ -29,7 +37,10 @@ const MoviesBox = (props) => {
           </button>
         </div>
         <div>
-          <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
+          <button
+            className="carousel-movie-buttons__styling carousel-movie-buttons--add"
+            onClick={detailsHandler}
+          >
             <p>
               <FaClipboardList className="carousel-movie-buttons__heart__icon" />
               Details

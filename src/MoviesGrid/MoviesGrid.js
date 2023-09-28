@@ -42,7 +42,6 @@ const MoviesGrid = (props) => {
     }
   };
 
-  // <NotFound type={"404 Page"} />
 
   // Render movies or tv shows if the array is not empty
   const renderMovieGrid = (moviesArray, type) => {
@@ -52,6 +51,7 @@ const MoviesGrid = (props) => {
           {moviesArray?.map((el) => {
             return (
               <MoviesBox
+                id={el.id}
                 rating={el.vote_average}
                 poster={el.poster_path}
                 key={uuid()}

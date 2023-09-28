@@ -59,7 +59,7 @@ const SearchComponent = () => {
   return (
     <>
       <Navbar />
-      <MoviesGrid type={id.length < 0 ? "Unknown" : "Searched"} />
+      <MoviesGrid type={"Searched"} />
       <Footer />
     </>
   );
