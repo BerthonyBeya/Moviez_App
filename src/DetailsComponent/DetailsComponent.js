@@ -12,7 +12,7 @@ import "./DetailsComponent.scss";
 // "Show"  The Challenge: USA          id:203423
 
 const DetailsComponent = () => {
-  const { id } = useParams();
+  const { id, type } = useParams();
 
   const [movieDetails, setMovieDetails] = useState(
     "Movie details state is empty"
@@ -20,6 +20,9 @@ const DetailsComponent = () => {
   const [showDetails, setShowDetails] = useState(
     "Tv Show details state is empty"
   );
+
+  console.log(type);
+  console.log(id);
 
   useEffect(() => {
     const fetchSearchedData = async () => {
