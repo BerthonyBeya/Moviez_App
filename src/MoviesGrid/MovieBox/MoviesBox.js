@@ -8,6 +8,7 @@ const MoviesBox = (props) => {
 
   // Navigating to movies or shows details page
   const detailsHandler = () => {
+    console.log(props.type);
     navigate(`/details/${props.id}`);
   };
 

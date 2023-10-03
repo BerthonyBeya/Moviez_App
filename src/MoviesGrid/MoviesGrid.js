@@ -42,7 +42,6 @@ const MoviesGrid = (props) => {
     }
   };
 
-
   // Render movies or tv shows if the array is not empty
   const renderMovieGrid = (moviesArray, type) => {
     if (moviesArray?.length !== 0) {
@@ -52,6 +51,7 @@ const MoviesGrid = (props) => {
             return (
               <MoviesBox
                 id={el.id}
+                type={type}
                 rating={el.vote_average}
                 poster={el.poster_path}
                 key={uuid()}
