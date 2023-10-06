@@ -25,29 +25,32 @@ const DetailsComponent = () => {
 
   useEffect(() => {
     const fetchSearchedData = async () => {
-      const movie = `https://api.themoviedb.org/3/movie/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`;
-      const tv = `https://api.themoviedb.org/3/tv/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`;
-
-      // Fetching for the searched data
-      const [movieResponse, showResponse] = await Promise.allSettled(
-        [movie, tv].map((data) => {
-          return axios(data);
-        })
-      );
-
-      // If it's a movie details add it here
-      if (movieResponse?.status === "fulfilled") {
-        setMovieDetails(movieResponse.value);
+      // If it's a movie, fetch the movie infos
+      if (type === "movie") {
+        const movie = await axios(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+        );
+        console.log(movie);
+        // If the status is "fulfilled", add the movie infos to the state
+        if (movie?.status === 200) {
+          setMovieDetails(movie);
+        }
       }
 
-      // If it's a show details add it here
-      if (showResponse?.status === "fulfilled") {
-        setShowDetails(showResponse.value);
+      // If it's a show, fetch the show infos
+      if (type === "show") {
+        const show = await axios(
+          `https://api.themoviedb.org/3/tv/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+        );
+        // If the status is "fulfilled", add the show infos to the state
+        if (show?.status === 200) {
+          setShowDetails(show);
+        }
       }
     };
 
     fetchSearchedData();
-  }, [id]);
+  }, [id, type]);
 
   return (
     <>
