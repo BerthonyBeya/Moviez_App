@@ -15,8 +15,8 @@ const HomeCarousel = (props) => {
   const navigate = useNavigate();
 
   // Get movies and shows IDs
-  const getID = (id) => {
-    navigate(`/details/${id}`);
+  const getID = (id, type) => {
+    navigate(`/details/${id}/${type}`);
   };
 
   // Fetching Carousel data
@@ -99,7 +99,7 @@ const HomeCarousel = (props) => {
 
   /* console.log(homeMovies); */
 
-  const addingCarouselDetails= () => {
+  const addingCarouselDetails = () => {
     // Display this Carousel if it's "HomePage"
     if (props.type === "homePage") {
       return homeMovies?.map((movie) => {
@@ -150,7 +150,7 @@ const HomeCarousel = (props) => {
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
-                    onClick={() => getID(movie.id)}
+                    onClick={() => getID(movie.id, "movie")}
                   >
                     <p>
                       <FaClipboardList className="carousel-movie-buttons__heart__icon" />
@@ -215,7 +215,7 @@ const HomeCarousel = (props) => {
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
-                    onClick={() => getID(movie.id)}
+                    onClick={() => getID(movie.id, "movie")}
                   >
                     <p>
                       <FaClipboardList className="carousel-movie-buttons__heart__icon" />
@@ -262,9 +262,7 @@ const HomeCarousel = (props) => {
               <p className="carousel-movie__bio">{show.overview}</p>
               <div className="carousel-movie-buttons">
                 <span>
-                  <button
-                    className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
-                  >
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                     <p>
                       <FaPlay className="carousel-movie-buttons__watch__icon" />
                       Watch now
@@ -282,7 +280,7 @@ const HomeCarousel = (props) => {
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
-                    onClick={() => getID(show.id)}
+                    onClick={() => getID(show.id, "show")}
                   >
                     <p>
                       <FaClipboardList className="carousel-movie-buttons__heart__icon" />
