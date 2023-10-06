@@ -21,7 +21,6 @@ const DetailsComponent = () => {
     "Tv Show details state is empty"
   );
 
-  console.log(type);
 
   useEffect(() => {
     const fetchSearchedData = async () => {
