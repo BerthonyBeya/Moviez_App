@@ -102,7 +102,7 @@ const HomeCarousel = (props) => {
   const addingCarouselDetails= () => {
     // Display this Carousel if it's "HomePage"
     if (props.type === "homePage") {
-      return homeMovies.map((movie) => {
+      return homeMovies?.map((movie) => {
         return (
           <Carousel.Item key={uuid()}>
             <img
@@ -167,7 +167,7 @@ const HomeCarousel = (props) => {
 
     // Display this carousel if it's "Now Playing Movies" Page
     if (props.type === "Now Playing Movies") {
-      return nowPlayingMovies.map((movie) => {
+      return nowPlayingMovies?.map((movie) => {
         return (
           <Carousel.Item key={uuid()}>
             <img
@@ -232,7 +232,7 @@ const HomeCarousel = (props) => {
 
     // Display this carousel if it's "Now Playing Shows" Page
     if (props.type === "Now Playing Shows") {
-      return nowPlayingTvShows.map((show) => {
+      return nowPlayingTvShows?.map((show) => {
         return (
           <Carousel.Item key={uuid()}>
             <img

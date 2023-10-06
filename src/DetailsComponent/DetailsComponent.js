@@ -22,7 +22,6 @@ const DetailsComponent = () => {
   );
 
   console.log(type);
-  console.log(id);
 
   useEffect(() => {
     const fetchSearchedData = async () => {

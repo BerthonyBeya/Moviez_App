@@ -38,7 +38,7 @@ function App() {
     { path: "/nowplayingshows", element: <SeriesSection /> },
     { path: "/search/:id", element: <SearchComponent /> },
     { path: "/favorites", element: <FavoriteComponent /> },
-    { path: "/details/:id", element: <DetailsComponent /> },
+    { path: "/details/:id/:type", element: <DetailsComponent /> },
     { path: "*", element: <PageNotFound /> },
   ]);
 

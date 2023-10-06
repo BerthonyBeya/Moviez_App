@@ -50,10 +50,11 @@ const MoviesGrid = (props) => {
           {moviesArray?.map((el) => {
             return (
               <MoviesBox
-                id={el.id}
-                type={type}
-                rating={el.vote_average}
-                poster={el.poster_path}
+                tvShowDates={el.first_air_date}
+                type={el}
+                id={el?.id}
+                rating={el?.vote_average}
+                poster={el?.poster_path}
                 key={uuid()}
               />
             );

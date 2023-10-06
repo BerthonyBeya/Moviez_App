@@ -8,8 +8,14 @@ const MoviesBox = (props) => {
 
   // Navigating to movies or shows details page
   const detailsHandler = () => {
-    console.log(props.type);
-    navigate(`/details/${props.id}`);
+    // If it's not show then add "movie" as the type else add "show"
+    let type = props?.tvShowDates === undefined ? "movie" : "show";
+    navigate(`/details/${props.id}/${type}`);
+  };
+
+  // Wacthing video handler
+  const watchHandler = () => {
+    console.log(props?.tvShowDates === undefined ? "movie" : "show");
   };
 
   return (
@@ -22,7 +28,10 @@ const MoviesBox = (props) => {
       </div>
       <div className="movies-grid__overlay">
         <div>
-          <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+          <button
+            className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+            onClick={watchHandler}
+          >
             <p>
               <FaPlay className="carousel-movie-buttons__watch__icon" />
               Watch now
