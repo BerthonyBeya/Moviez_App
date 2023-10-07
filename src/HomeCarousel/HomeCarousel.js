@@ -28,8 +28,7 @@ const HomeCarousel = (props) => {
         "Fast",
         "Meg 2: The Trench",
       ];
-
-      console.log(process.env.REACT_APP_API_KEY);
+      
 
       // Get home movies
       homeMovieTitles.forEach((movie) => {
