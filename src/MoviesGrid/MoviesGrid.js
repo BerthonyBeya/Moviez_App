@@ -21,6 +21,7 @@ const MoviesGrid = (props) => {
     return state?.search?.value?.search;
   });
 
+
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
     switch (props.type) {

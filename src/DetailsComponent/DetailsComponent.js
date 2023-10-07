@@ -29,7 +29,6 @@ const DetailsComponent = () => {
         const movie = await axios(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
         );
-        console.log(movie);
         // If the status is "fulfilled", add the movie infos to the state
         if (movie?.status === 200) {
           setMovieDetails(movie);
@@ -37,7 +36,7 @@ const DetailsComponent = () => {
       }
 
       // If it's a show, fetch the show infos
-      if (type === "show") {
+      if (type === "tv") {
         const show = await axios(
           `https://api.themoviedb.org/3/tv/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
         );

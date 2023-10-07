@@ -6,16 +6,12 @@ import { useNavigate } from "react-router-dom";
 const MoviesBox = (props) => {
   const navigate = useNavigate();
 
+  // If it's not show then add "movie" as the type else add "tv"
+  let type = props?.tvShowDates === undefined ? "movie" : "tv";
+
   // Navigating to movies or shows details page
   const detailsHandler = () => {
-    // If it's not show then add "movie" as the type else add "show"
-    let type = props?.tvShowDates === undefined ? "movie" : "show";
     navigate(`/details/${props.id}/${type}`);
-  };
-
-  // Wacthing video handler
-  const watchHandler = () => {
-    console.log(props?.tvShowDates === undefined ? "movie" : "show");
   };
 
   return (
@@ -28,15 +24,18 @@ const MoviesBox = (props) => {
       </div>
       <div className="movies-grid__overlay">
         <div>
-          <button
-            className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
-            onClick={watchHandler}
+          <a
+            href={`https://www.themoviedb.org/${type}/${props.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <p>
-              <FaPlay className="carousel-movie-buttons__watch__icon" />
-              Watch now
-            </p>
-          </button>
+            <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+              <p>
+                <FaPlay className="carousel-movie-buttons__watch__icon" />
+                Watch now
+              </p>
+            </button>
+          </a>
         </div>
         <div>
           <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">

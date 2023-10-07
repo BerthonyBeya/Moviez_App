@@ -280,7 +280,7 @@ const HomeCarousel = (props) => {
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
-                    onClick={() => getID(show.id, "show")}
+                    onClick={() => getID(show.id, "tv")}
                   >
                     <p>
                       <FaClipboardList className="carousel-movie-buttons__heart__icon" />
