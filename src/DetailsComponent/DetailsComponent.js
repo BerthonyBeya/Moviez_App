@@ -21,7 +21,6 @@ const DetailsComponent = () => {
     "Tv Show details state is empty"
   );
 
-
   useEffect(() => {
     const fetchSearchedData = async () => {
       // If it's a movie, fetch the movie infos
@@ -100,14 +99,20 @@ const DetailsComponent = () => {
                 </li>
               </ul>
               <div className="carousel-movie-buttons details--buttons">
-                <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                    <p>
-                      <FaPlay className="carousel-movie-buttons__watch__icon" />
-                      Watch now
-                    </p>
-                  </button>
-                </span>
+                <a
+                  href={`https://www.themoviedb.org/${type}/${id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                      <p>
+                        <FaPlay className="carousel-movie-buttons__watch__icon" />
+                        Watch now
+                      </p>
+                    </button>
+                  </span>
+                </a>
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -177,14 +182,21 @@ const DetailsComponent = () => {
                 </li>
               </ul>
               <div className="carousel-movie-buttons details--buttons">
-                <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                    <p>
-                      <FaPlay className="carousel-movie-buttons__watch__icon" />
-                      Watch now
-                    </p>
-                  </button>
-                </span>
+                <a
+                  href={`https://www.themoviedb.org/${type}/${id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                      <p>
+                        <FaPlay className="carousel-movie-buttons__watch__icon" />
+                        Watch now
+                      </p>
+                    </button>
+                  </span>
+                </a>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>

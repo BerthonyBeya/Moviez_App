@@ -131,14 +131,20 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
-                <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                    <p>
-                      <FaPlay className="carousel-movie-buttons__watch__icon" />
-                      Watch now
-                    </p>
-                  </button>
-                </span>
+                <a
+                  href={`https://www.themoviedb.org/movie/${movie.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                      <p>
+                        <FaPlay className="carousel-movie-buttons__watch__icon" />
+                        Watch now
+                      </p>
+                    </button>
+                  </span>
+                </a>
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -196,14 +202,20 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
-                <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                    <p>
-                      <FaPlay className="carousel-movie-buttons__watch__icon" />
-                      Watch now
-                    </p>
-                  </button>
-                </span>
+                <a
+                  href={`https://www.themoviedb.org/movie/${movie.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                      <p>
+                        <FaPlay className="carousel-movie-buttons__watch__icon" />
+                        Watch now
+                      </p>
+                    </button>
+                  </span>
+                </a>
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -261,14 +273,20 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{show.overview}</p>
               <div className="carousel-movie-buttons">
-                <span>
-                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                    <p>
-                      <FaPlay className="carousel-movie-buttons__watch__icon" />
-                      Watch now
-                    </p>
-                  </button>
-                </span>
+                <a
+                  href={`https://www.themoviedb.org/tv/${show.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                      <p>
+                        <FaPlay className="carousel-movie-buttons__watch__icon" />
+                        Watch now
+                      </p>
+                    </button>
+                  </span>
+                </a>
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
