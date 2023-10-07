@@ -29,11 +29,13 @@ const HomeCarousel = (props) => {
         "Meg 2: The Trench",
       ];
 
+      console.log(process.env.REACT_APP_API_KEY);
+
       // Get home movies
       homeMovieTitles.forEach((movie) => {
         const fetchMovie = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/movie?api_key=770df377767ac6b055c68672f960c59f&query=${movie}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${movie}&include_adult=false&language=en-US&page=1`
           );
 
           setHomeMovies((currentState) => {
@@ -56,7 +58,7 @@ const HomeCarousel = (props) => {
       nowPlayingMoviesTitles.forEach((movie) => {
         const fetchMovie = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/movie?api_key=770df377767ac6b055c68672f960c59f&query=${movie}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${movie}&include_adult=false&language=en-US&page=1`
           );
 
           setNowPlayingMovies((currentState) => {
@@ -80,7 +82,7 @@ const HomeCarousel = (props) => {
       nowPlayingTvShowsTitles.forEach((show) => {
         const fetchShow = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/tv?api_key=770df377767ac6b055c68672f960c59f&query=${show}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/tv?api_key=${process.env.REACT_APP_API_KEY}&query=${show}&include_adult=false&language=en-US&page=1`
           );
 
           setNowPlayingTvShows((currentState) => {

@@ -26,7 +26,7 @@ const DetailsComponent = () => {
       // If it's a movie, fetch the movie infos
       if (type === "movie") {
         const movie = await axios(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
         );
         // If the status is "fulfilled", add the movie infos to the state
         if (movie?.status === 200) {
@@ -37,7 +37,7 @@ const DetailsComponent = () => {
       // If it's a show, fetch the show infos
       if (type === "tv") {
         const show = await axios(
-          `https://api.themoviedb.org/3/tv/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+          `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_API_KEY}`
         );
         // If the status is "fulfilled", add the show infos to the state
         if (show?.status === 200) {
