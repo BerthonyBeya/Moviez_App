@@ -44,20 +44,20 @@ function App() {
 
   useEffect(() => {
     const UPCOMING_MOVIES_ENDPOINS = [
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=2`,
     ];
 
     const NOW_PLAYING_MOVIES_ENDPOINTS = [
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=2`,
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=3`,
     ];
 
     const SHOWS_ON_AIR_ENDPOINTS = [
-      "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=1",
-      "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=2",
-      "https://api.themoviedb.org/3/tv/on_the_air?api_key=770df377767ac6b055c68672f960c59f&language=en-US&page=3",
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=2`,
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=3`,
     ];
 
     const POPULAR_TV_SHOWS_ENDPOINTS = [
@@ -110,7 +110,7 @@ function App() {
         );
       }
 
-      if (type === "shows") {
+      if (type === "tv") {
         // Adding the fetched showsOnAir to the states
         // PAGE1
         setShowsOnAirPAGE1(
@@ -155,7 +155,7 @@ function App() {
 
     fetchAllData(
       [...SHOWS_ON_AIR_ENDPOINTS, ...POPULAR_TV_SHOWS_ENDPOINTS],
-      "shows"
+      "tv"
     );
   }, []);
 
