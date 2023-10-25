@@ -14,6 +14,7 @@ import PageNotFound from "./PageNotFound/PageNotFound";
 import FavoriteComponent from "./FavoriteComponent/FavoriteComponent";
 import SearchComponent from "./SearchComponent/SearchComponent";
 import DetailsComponent from "./DetailsComponent/DetailsComponent";
+import VideoGrid from "./VideoGrid/VideoGrid";
 
 function App() {
   // Movies states
@@ -39,6 +40,7 @@ function App() {
     { path: "/search/:id", element: <SearchComponent /> },
     { path: "/favorites", element: <FavoriteComponent /> },
     { path: "/details/:id/:type", element: <DetailsComponent /> },
+    { path: "/video/:id", element: <VideoGrid /> },
     { path: "*", element: <PageNotFound /> },
   ]);
 
@@ -180,9 +182,11 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <RouterProvider router={route} />
-    </div>
+    <>
+      <div className="App">
+        <RouterProvider router={route} />
+      </div>
+    </>
   );
 }
 

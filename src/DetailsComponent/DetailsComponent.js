@@ -49,6 +49,7 @@ const DetailsComponent = () => {
     fetchSearchedData();
   }, [id, type]);
 
+
   return (
     <>
       <Navbar />

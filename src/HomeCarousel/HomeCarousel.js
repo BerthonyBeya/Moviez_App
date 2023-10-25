@@ -19,6 +19,12 @@ const HomeCarousel = (props) => {
     navigate(`/details/${id}/${type}`);
   };
 
+  // GO to the video route
+  const goToVideo = (videoInfos) => {
+    navigate(`/video/${videoInfos}`);
+    console.log(videoInfos);
+  };
+
   // Fetching Carousel data
   useEffect(() => {
     const searchHomeMovies = async () => {
@@ -28,7 +34,6 @@ const HomeCarousel = (props) => {
         "Fast",
         "Meg 2: The Trench",
       ];
-      
 
       // Get home movies
       homeMovieTitles.forEach((movie) => {
@@ -132,20 +137,24 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
-                <a
+                {/*  <a
                   href={`https://www.themoviedb.org/movie/${movie.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                > */}
+                <span
+                  onClick={() => {
+                    goToVideo({ id: movie.id, poster: movie.poster_path });
+                  }}
                 >
-                  <span>
-                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                      <p>
-                        <FaPlay className="carousel-movie-buttons__watch__icon" />
-                        Watch now
-                      </p>
-                    </button>
-                  </span>
-                </a>
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                    <p>
+                      <FaPlay className="carousel-movie-buttons__watch__icon" />
+                      Watch now
+                    </p>
+                  </button>
+                </span>
+                {/* </a> */}
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -316,12 +325,14 @@ const HomeCarousel = (props) => {
   };
 
   return (
-    <div className="carousel">
-      <div className="carousel__overlay"></div>
-      <Carousel interval={2000} nextIcon={false} prevIcon={false}>
-        {addingCarouselDetails()}
-      </Carousel>
-    </div>
+    <>
+      <div className="carousel">
+        <div className="carousel__overlay"></div>
+        <Carousel interval={2000} nextIcon={false} prevIcon={false}>
+          {addingCarouselDetails()}
+        </Carousel>
+      </div>
+    </>
   );
 };
 
