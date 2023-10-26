@@ -40,7 +40,7 @@ function App() {
     { path: "/search/:id", element: <SearchComponent /> },
     { path: "/favorites", element: <FavoriteComponent /> },
     { path: "/details/:id/:type", element: <DetailsComponent /> },
-    { path: "/video/:id", element: <VideoGrid /> },
+    { path: "/video/:id/:type", element: <VideoGrid /> },
     { path: "*", element: <PageNotFound /> },
   ]);
 

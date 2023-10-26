@@ -1,6 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import VideoNotFound from "../VideoNotFound/VideoNotFound";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
@@ -13,6 +14,8 @@ const VideoPlayer = () => {
   const [loader, setLoader] = useState(false);
   const [errorAPI, setErrorAPI] = useState(false);
 
+  const { id, type } = useParams();
+
   // Fetch video
   useEffect(() => {
     const fetchVideos = async () => {
@@ -20,9 +23,7 @@ const VideoPlayer = () => {
       try {
         setLoader(true);
         const result = await axios(
-          `https://api.themoviedb.org/3/movie/${"926393"}/videos?api_key=${
-            process.env.REACT_APP_API_KEY
-          }`
+          `https://api.themoviedb.org/3/${type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}`
         );
 
         // Adding fetched video into the state
@@ -44,8 +45,9 @@ const VideoPlayer = () => {
     };
 
     fetchVideos();
-  }, []);
+  }, [id, type]);
 
+  console.log(videos);
 
   return (
     <>

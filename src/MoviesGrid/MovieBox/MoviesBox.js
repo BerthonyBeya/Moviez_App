@@ -7,11 +7,11 @@ const MoviesBox = (props) => {
   const navigate = useNavigate();
 
   // If it's not show then add "movie" as the type else add "tv"
-  let type = props?.tvShowDates === undefined ? "movie" : "tv";
+  /* let type = props?.tvShowDates === undefined ? "movie" : "tv"; */
 
   // Navigating to movies or shows details page
   const detailsHandler = () => {
-    navigate(`/details/${props.id}/${type}`);
+    navigate(`/details/${props.id}/${props.type}`);
   };
 
   return (
@@ -25,7 +25,7 @@ const MoviesBox = (props) => {
       <div className="movies-grid__overlay">
         <div>
           <a
-            href={`https://www.themoviedb.org/${type}/${props.id}`}
+            href={`https://www.themoviedb.org/${props.type}/${props.id}`}
             target="_blank"
             rel="noopener noreferrer"
           >

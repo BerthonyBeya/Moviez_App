@@ -20,9 +20,8 @@ const HomeCarousel = (props) => {
   };
 
   // GO to the video route
-  const goToVideo = (videoInfos) => {
-    navigate(`/video/${videoInfos}`);
-    console.log(videoInfos);
+  const goToVideo = (id, type) => {
+    navigate(`/video/${id}/${type}`);
   };
 
   // Fetching Carousel data
@@ -137,14 +136,9 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
-                {/*  <a
-                  href={`https://www.themoviedb.org/movie/${movie.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                > */}
                 <span
                   onClick={() => {
-                    goToVideo({ id: movie.id, poster: movie.poster_path });
+                    goToVideo(movie.id, "movie");
                   }}
                 >
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
@@ -194,12 +188,6 @@ const HomeCarousel = (props) => {
             <Carousel.Caption className="carousel-movie">
               <h1 className="carousel-movie__title">{movie.original_title}</h1>
               <div className="carousel-movie-details">
-                {/* <div className="carousel-movie-details__quality">
-                  <div>
-                    {" "}
-                    <p>HD</p>
-                  </div>
-                </div> */}
                 <p className="carousel-movie-details__rate">
                   <FaStar /> {movie.vote_average}
                 </p>
@@ -212,20 +200,19 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{movie.overview}</p>
               <div className="carousel-movie-buttons">
-                <a
-                  href={`https://www.themoviedb.org/movie/${movie.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <span
+                  onClick={() => {
+                    goToVideo(movie.id, "movie");
+                  }}
                 >
-                  <span>
-                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                      <p>
-                        <FaPlay className="carousel-movie-buttons__watch__icon" />
-                        Watch now
-                      </p>
-                    </button>
-                  </span>
-                </a>
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                    <p>
+                      <FaPlay className="carousel-movie-buttons__watch__icon" />
+                      Watch now
+                    </p>
+                  </button>
+                </span>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -265,12 +252,6 @@ const HomeCarousel = (props) => {
             <Carousel.Caption className="carousel-movie">
               <h1 className="carousel-movie__title">{show.original_name}</h1>
               <div className="carousel-movie-details">
-                {/* <div className="carousel-movie-details__quality">
-                  <div>
-                    {" "}
-                    <p>HD</p>
-                  </div>
-                </div> */}
                 <p className="carousel-movie-details__rate">
                   <FaStar /> {show.vote_average}
                 </p>
@@ -283,20 +264,17 @@ const HomeCarousel = (props) => {
               </div>
               <p className="carousel-movie__bio">{show.overview}</p>
               <div className="carousel-movie-buttons">
-                <a
-                  href={`https://www.themoviedb.org/tv/${show.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>
-                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                      <p>
-                        <FaPlay className="carousel-movie-buttons__watch__icon" />
-                        Watch now
-                      </p>
-                    </button>
-                  </span>
-                </a>
+                <span onClick={() => {
+                    goToVideo(show.id, "tv");
+                  }}>
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                    <p>
+                      <FaPlay className="carousel-movie-buttons__watch__icon" />
+                      Watch now
+                    </p>
+                  </button>
+                </span>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
