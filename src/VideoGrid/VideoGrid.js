@@ -47,7 +47,6 @@ const VideoPlayer = () => {
     fetchVideos();
   }, [id, type]);
 
-  console.log(videos);
 
   return (
     <>
