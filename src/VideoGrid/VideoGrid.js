@@ -31,7 +31,7 @@ const VideoPlayer = () => {
         // Waiting couple 1 sec to turn the loader off
         setTimeout(() => {
           setLoader(false);
-        }, 3000);
+        }, 1000);
 
         //
       } catch (error) {
@@ -67,14 +67,13 @@ const VideoPlayer = () => {
               if (index > 5) return "";
               return (
                 <iframe
+                  className="video-player-grid__iframe"
                   width="100%"
                   height="250"
                   src={`https://www.youtube.com/embed/${video.key}?rel=0&vq=small`}
                   title={video.title}
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  loading="eager"
                 ></iframe>
               );
             })}

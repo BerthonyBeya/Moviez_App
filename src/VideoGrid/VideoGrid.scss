@@ -21,4 +21,8 @@
         left: 46%;
         z-index: 0;
     }
+
+    &__iframe {
+        background: darken($color: $gray-color , $amount: 45%);
+    }
 }
