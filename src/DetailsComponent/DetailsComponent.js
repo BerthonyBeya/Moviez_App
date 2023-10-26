@@ -185,20 +185,14 @@ const DetailsComponent = () => {
                 </li>
               </ul>
               <div className="carousel-movie-buttons details--buttons">
-                <a
-                  href={`https://www.themoviedb.org/${type}/${id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>
-                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                      <p>
-                        <FaPlay className="carousel-movie-buttons__watch__icon" />
-                        Watch now
-                      </p>
-                    </button>
-                  </span>
-                </a>
+                <span onClick={goToVideo}>
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                    <p>
+                      <FaPlay className="carousel-movie-buttons__watch__icon" />
+                      Watch now
+                    </p>
+                  </button>
+                </span>
 
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
