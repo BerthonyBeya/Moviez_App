@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaPlay } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
@@ -20,6 +21,13 @@ const DetailsComponent = () => {
   const [showDetails, setShowDetails] = useState(
     "Tv Show details state is empty"
   );
+
+  const navigate = useNavigate();
+
+  // GO to the video route
+  const goToVideo = () => {
+    navigate(`/video/${id}/${type}`);
+  };
 
   useEffect(() => {
     const fetchSearchedData = async () => {
@@ -48,7 +56,6 @@ const DetailsComponent = () => {
 
     fetchSearchedData();
   }, [id, type]);
-
 
   return (
     <>
@@ -100,20 +107,15 @@ const DetailsComponent = () => {
                 </li>
               </ul>
               <div className="carousel-movie-buttons details--buttons">
-                <a
-                  href={`https://www.themoviedb.org/${type}/${id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>
-                    <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
-                      <p>
-                        <FaPlay className="carousel-movie-buttons__watch__icon" />
-                        Watch now
-                      </p>
-                    </button>
-                  </span>
-                </a>
+                <span onClick={goToVideo}>
+                  <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+                    <p>
+                      <FaPlay className="carousel-movie-buttons__watch__icon" />
+                      Watch now
+                    </p>
+                  </button>
+                </span>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
