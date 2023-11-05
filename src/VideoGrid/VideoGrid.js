@@ -42,7 +42,7 @@ const VideoPlayer = () => {
     <>
       <Navbar />
       <div className="video-container">
-        <div className="video-player-grid__overlay"></div>
+        {/* <div className="video-player-grid__overlay"></div> */}
 
         {errorAPI && <VideoNotFound />}
 
@@ -53,16 +53,21 @@ const VideoPlayer = () => {
             {videos?.map((video, index) => {
               if (index > 5) return "";
               return (
-                <iframe
-                  key={uuid()}
-                  className="video-player-grid__iframe"
-                  width="100%"
-                  height="250"
-                  src={`https://www.youtube.com/embed/${video.key}?rel=0&vq=small`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <div className="video-player-grid__container">
+                  <div className="video-player-grid__overlay">
+                    <button>Play Video</button>
+                  </div>
+                  <iframe
+                    key={uuid()}
+                    className="video-player-grid__iframe"
+                    width="100%"
+                    height="250"
+                    src={`https://www.youtube.com/embed/${video?.key}?rel=0&vq=small`}
+                    title={video?.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               );
             })}
           </div>
