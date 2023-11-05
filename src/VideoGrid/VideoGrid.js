@@ -12,6 +12,7 @@ import "./VideoGrid.scss";
 const VideoPlayer = () => {
   const [videos, setVideos] = useState([]);
   const [errorAPI, setErrorAPI] = useState(false);
+  const [playVideoBox, setPlayvideoBox] = useState(false);
 
   const { id, type } = useParams();
 
@@ -40,40 +41,46 @@ const VideoPlayer = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="video-container">
-        {/* <div className="video-player-grid__overlay"></div> */}
+      {playVideoBox ? (
+        <div className="video-container-overlay">
+          <h1>Video Playing Now...</h1>
+        </div>
+      ) : (
+        <>
+          <Navbar />
+          <div className="video-container">
+            {errorAPI && <VideoNotFound />}
 
-        {errorAPI && <VideoNotFound />}
+            {!errorAPI && videos?.length === 0 && <VideoNotFound />}
 
-        {!errorAPI && videos?.length === 0 && <VideoNotFound />}
-
-        {!errorAPI && videos?.length > 0 && (
-          <div className="video-player-grid">
-            {videos?.map((video, index) => {
-              if (index > 5) return "";
-              return (
-                <div className="video-player-grid__container">
-                  <div className="video-player-grid__overlay">
-                    <button>Play Video</button>
-                  </div>
-                  <iframe
-                    key={uuid()}
-                    className="video-player-grid__iframe"
-                    width="100%"
-                    height="250"
-                    src={`https://www.youtube.com/embed/${video?.key}?rel=0&vq=small`}
-                    title={video?.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              );
-            })}
+            {!errorAPI && videos?.length > 0 && (
+              <div className="video-player-grid">
+                {videos?.map((video, index) => {
+                  if (index > 5) return "";
+                  return (
+                    <div className="video-player-grid__container">
+                      <div className="video-player-grid__overlay">
+                        <button>Play Video</button>
+                      </div>
+                      <iframe
+                        key={uuid()}
+                        className="video-player-grid__iframe"
+                        width="100%"
+                        height="250"
+                        src={`https://www.youtube.com/embed/${video?.key}?rel=0&vq=small`}
+                        title={video?.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-        )}
-      </div>
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 };
