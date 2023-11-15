@@ -51,8 +51,7 @@ const MoviesGrid = (props) => {
           {moviesArray?.map((el) => {
             return (
               <MoviesBox
-                tvShowDates={el.first_air_date}
-                type={el}
+                type={el?.first_air_date === undefined ? "movie" : "tv"}
                 id={el?.id}
                 rating={el?.vote_average}
                 poster={el?.poster_path}

@@ -13,8 +13,8 @@ const SearchComponent = () => {
 
   useEffect(() => {
     const fetchSearchedData = async () => {
-      const movie = `https://api.themoviedb.org/3/search/movie?api_key=770df377767ac6b055c68672f960c59f&query=${id}&include_adult=false&language=en-US&page=1`;
-      const tv = `https://api.themoviedb.org/3/search/tv?api_key=770df377767ac6b055c68672f960c59f&query=${id}&include_adult=false&language=en-US&page=1`;
+      const movie = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${id}&include_adult=false&language=en-US&page=1`;
+      const tv = `https://api.themoviedb.org/3/search/tv?api_key=${process.env.REACT_APP_API_KEY}&query=${id}&include_adult=false&language=en-US&page=1`;
 
       // Fetching for the searched data
       const [movieResponse, tvResponse] = await Promise.allSettled(

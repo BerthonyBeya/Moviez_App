@@ -19,6 +19,11 @@ const HomeCarousel = (props) => {
     navigate(`/details/${id}/${type}`);
   };
 
+  // GO to the video route
+  /* const goToVideo = (id, type) => {
+    navigate(`/video/${id}/${type}`);
+  }; */
+
   // Fetching Carousel data
   useEffect(() => {
     const searchHomeMovies = async () => {
@@ -33,7 +38,7 @@ const HomeCarousel = (props) => {
       homeMovieTitles.forEach((movie) => {
         const fetchMovie = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/movie?api_key=770df377767ac6b055c68672f960c59f&query=${movie}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${movie}&include_adult=false&language=en-US&page=1`
           );
 
           setHomeMovies((currentState) => {
@@ -56,7 +61,7 @@ const HomeCarousel = (props) => {
       nowPlayingMoviesTitles.forEach((movie) => {
         const fetchMovie = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/movie?api_key=770df377767ac6b055c68672f960c59f&query=${movie}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${movie}&include_adult=false&language=en-US&page=1`
           );
 
           setNowPlayingMovies((currentState) => {
@@ -80,7 +85,7 @@ const HomeCarousel = (props) => {
       nowPlayingTvShowsTitles.forEach((show) => {
         const fetchShow = async () => {
           const result = await axios(
-            `https://api.themoviedb.org/3/search/tv?api_key=770df377767ac6b055c68672f960c59f&query=${show}&include_adult=false&language=en-US&page=1`
+            `https://api.themoviedb.org/3/search/tv?api_key=${process.env.REACT_APP_API_KEY}&query=${show}&include_adult=false&language=en-US&page=1`
           );
 
           setNowPlayingTvShows((currentState) => {
@@ -134,9 +139,13 @@ const HomeCarousel = (props) => {
                 <a
                   href={`https://www.themoviedb.org/movie/${movie.id}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  <span>
+                  <span
+                  /* onClick={() => {
+                    goToVideo(movie.id, "movie");
+                  }} */
+                  >
                     <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                       <p>
                         <FaPlay className="carousel-movie-buttons__watch__icon" />
@@ -145,6 +154,7 @@ const HomeCarousel = (props) => {
                     </button>
                   </span>
                 </a>
+                {/* </a> */}
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -184,12 +194,6 @@ const HomeCarousel = (props) => {
             <Carousel.Caption className="carousel-movie">
               <h1 className="carousel-movie__title">{movie.original_title}</h1>
               <div className="carousel-movie-details">
-                {/* <div className="carousel-movie-details__quality">
-                  <div>
-                    {" "}
-                    <p>HD</p>
-                  </div>
-                </div> */}
                 <p className="carousel-movie-details__rate">
                   <FaStar /> {movie.vote_average}
                 </p>
@@ -205,9 +209,13 @@ const HomeCarousel = (props) => {
                 <a
                   href={`https://www.themoviedb.org/movie/${movie.id}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  <span>
+                  <span
+                  /*  onClick={() => {
+                    goToVideo(movie.id, "movie");
+                  }} */
+                  >
                     <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                       <p>
                         <FaPlay className="carousel-movie-buttons__watch__icon" />
@@ -216,6 +224,7 @@ const HomeCarousel = (props) => {
                     </button>
                   </span>
                 </a>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -255,12 +264,6 @@ const HomeCarousel = (props) => {
             <Carousel.Caption className="carousel-movie">
               <h1 className="carousel-movie__title">{show.original_name}</h1>
               <div className="carousel-movie-details">
-                {/* <div className="carousel-movie-details__quality">
-                  <div>
-                    {" "}
-                    <p>HD</p>
-                  </div>
-                </div> */}
                 <p className="carousel-movie-details__rate">
                   <FaStar /> {show.vote_average}
                 </p>
@@ -276,9 +279,13 @@ const HomeCarousel = (props) => {
                 <a
                   href={`https://www.themoviedb.org/tv/${show.id}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  <span>
+                  <span
+                  /*  onClick={() => {
+                    goToVideo(show.id, "tv");
+                  }} */
+                  >
                     <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                       <p>
                         <FaPlay className="carousel-movie-buttons__watch__icon" />
@@ -287,6 +294,7 @@ const HomeCarousel = (props) => {
                     </button>
                   </span>
                 </a>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -315,12 +323,14 @@ const HomeCarousel = (props) => {
   };
 
   return (
-    <div className="carousel">
-      <div className="carousel__overlay"></div>
-      <Carousel interval={2000} nextIcon={false} prevIcon={false}>
-        {addingCarouselDetails()}
-      </Carousel>
-    </div>
+    <>
+      <div className="carousel">
+        <div className="carousel__overlay"></div>
+        <Carousel interval={2000} nextIcon={false} prevIcon={false}>
+          {addingCarouselDetails()}
+        </Carousel>
+      </div>
+    </>
   );
 };
 

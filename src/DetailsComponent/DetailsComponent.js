@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaPlay } from "react-icons/fa";
+/* import { useNavigate } from "react-router-dom"; */
 import { AiOutlineHeart } from "react-icons/ai";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
@@ -21,12 +22,19 @@ const DetailsComponent = () => {
     "Tv Show details state is empty"
   );
 
+  /* const navigate = useNavigate(); */
+
+  // GO to the video route
+  /* const goToVideo = () => {
+    navigate(`/video/${id}/${type}`);
+  }; */
+
   useEffect(() => {
     const fetchSearchedData = async () => {
       // If it's a movie, fetch the movie infos
       if (type === "movie") {
         const movie = await axios(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
         );
         // If the status is "fulfilled", add the movie infos to the state
         if (movie?.status === 200) {
@@ -37,7 +45,7 @@ const DetailsComponent = () => {
       // If it's a show, fetch the show infos
       if (type === "tv") {
         const show = await axios(
-          `https://api.themoviedb.org/3/tv/${id}?api_key=${"770df377767ac6b055c68672f960c59f"}`
+          `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_API_KEY}`
         );
         // If the status is "fulfilled", add the show infos to the state
         if (show?.status === 200) {
@@ -102,9 +110,9 @@ const DetailsComponent = () => {
                 <a
                   href={`https://www.themoviedb.org/${type}/${id}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  <span>
+                  <span /* onClick={goToVideo} */>
                     <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                       <p>
                         <FaPlay className="carousel-movie-buttons__watch__icon" />
@@ -113,6 +121,7 @@ const DetailsComponent = () => {
                     </button>
                   </span>
                 </a>
+
                 <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
@@ -185,9 +194,9 @@ const DetailsComponent = () => {
                 <a
                   href={`https://www.themoviedb.org/${type}/${id}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  <span>
+                  <span /* onClick={goToVideo} */>
                     <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
                       <p>
                         <FaPlay className="carousel-movie-buttons__watch__icon" />

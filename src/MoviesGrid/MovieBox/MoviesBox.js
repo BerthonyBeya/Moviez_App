@@ -6,13 +6,15 @@ import { useNavigate } from "react-router-dom";
 const MoviesBox = (props) => {
   const navigate = useNavigate();
 
-  // If it's not show then add "movie" as the type else add "tv"
-  let type = props?.tvShowDates === undefined ? "movie" : "tv";
-
   // Navigating to movies or shows details page
   const detailsHandler = () => {
-    navigate(`/details/${props.id}/${type}`);
+    navigate(`/details/${props.id}/${props.type}`);
   };
+
+  // GO to the video route
+  /* const goToVideo = () => {
+    navigate(`/video/${props.id}/${props.type}`);
+  }; */
 
   return (
     <div className="movies-grid__movie">
@@ -25,11 +27,14 @@ const MoviesBox = (props) => {
       <div className="movies-grid__overlay">
         <div>
           <a
-            href={`https://www.themoviedb.org/${type}/${props.id}`}
+            href={`https://www.themoviedb.org/${props.type}/${props.id}`}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
-            <button className="carousel-movie-buttons__styling carousel-movie-buttons--watch">
+            <button
+              /* onClick={goToVideo} */
+              className="carousel-movie-buttons__styling carousel-movie-buttons--watch"
+            >
               <p>
                 <FaPlay className="carousel-movie-buttons__watch__icon" />
                 Watch now
