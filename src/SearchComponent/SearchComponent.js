@@ -11,6 +11,7 @@ const SearchComponent = () => {
   const [results, setResults] = useState([]);
   const { id } = useParams();
 
+
   useEffect(() => {
     const fetchSearchedData = async () => {
       const movie = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${id}&include_adult=false&language=en-US&page=1`;
@@ -22,6 +23,7 @@ const SearchComponent = () => {
           return axios(data);
         })
       );
+
 
       // Checking which one is successful and adding them to the state
       if (

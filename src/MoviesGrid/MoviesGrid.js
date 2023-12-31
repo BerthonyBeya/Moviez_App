@@ -21,7 +21,6 @@ const MoviesGrid = (props) => {
     return state?.search?.value?.search;
   });
 
-
   // Checking which type of movies or tv shows to display
   const renderMovies = () => {
     switch (props.type) {
@@ -66,6 +65,11 @@ const MoviesGrid = (props) => {
     // If the type is "Favorites" and the array is empty render this
     if (type === "Favorites" && moviesArray?.length === 0) {
       return <NotFound type={"Favorites"} />;
+    }
+    
+    // If the type is "Favorites" and the array is empty render this
+    if (type === "Searched" && moviesArray?.length === 0) {
+      return <NotFound type={"Movies"} />;
     }
 
     // If it's none of the above the return a loader
