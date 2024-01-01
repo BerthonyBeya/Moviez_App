@@ -122,14 +122,14 @@ const DetailsComponent = () => {
                   </span>
                 </a>
 
-                <span>
+                {/* <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
                       <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                       Add to list
                     </p>
                   </button>
-                </span>
+                </span> */}
               </div>
             </div>
           </div>
@@ -206,14 +206,14 @@ const DetailsComponent = () => {
                   </span>
                 </a>
 
-                <span>
+                {/* <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
                       <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                       Add to list
                     </p>
                   </button>
-                </span>
+                </span> */}
               </div>
             </div>
           </div>

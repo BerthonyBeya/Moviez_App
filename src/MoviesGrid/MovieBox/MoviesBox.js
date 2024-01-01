@@ -1,6 +1,6 @@
 import "../MoviesGrid.scss";
 import { FaPlay, FaClipboardList } from "react-icons/fa";
-import { AiOutlineHeart } from "react-icons/ai";
+/* import { AiOutlineHeart } from "react-icons/ai"; */
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -22,11 +22,11 @@ const MoviesBox = (props) => {
   }; */
 
   // Add Favorite
-  const favoriteHandler = () => {
+  /* const favoriteHandler = () => {
     setStorage((currentState) => {
       return [...currentState, props.forStorage];
     });
-  };
+  }; */
 
   return (
     <div className="movies-grid__movie">
@@ -54,7 +54,7 @@ const MoviesBox = (props) => {
             </button>
           </a>
         </div>
-        <div>
+        {/* <div>
           <button
             className="carousel-movie-buttons__styling carousel-movie-buttons--add"
             onClick={favoriteHandler}
@@ -64,7 +64,7 @@ const MoviesBox = (props) => {
               Add to list
             </p>
           </button>
-        </div>
+        </div> */}
         <div>
           <button
             className="carousel-movie-buttons__styling carousel-movie-buttons--add"

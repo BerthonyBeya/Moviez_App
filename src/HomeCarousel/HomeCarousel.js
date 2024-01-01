@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
 import { FaStar, FaPlay, FaClipboardList } from "react-icons/fa";
-import { AiOutlineHeart } from "react-icons/ai";
+/* import { AiOutlineHeart } from "react-icons/ai"; */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -155,14 +155,14 @@ const HomeCarousel = (props) => {
                   </span>
                 </a>
                 {/* </a> */}
-                <span>
+                {/* <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
                       <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                       Add to list
                     </p>
                   </button>
-                </span>
+                </span> */}
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
@@ -225,14 +225,14 @@ const HomeCarousel = (props) => {
                   </span>
                 </a>
 
-                <span>
+                {/* <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
                       <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                       Add to list
                     </p>
                   </button>
-                </span>
+                </span> */}
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
@@ -295,14 +295,14 @@ const HomeCarousel = (props) => {
                   </span>
                 </a>
 
-                <span>
+                {/* <span>
                   <button className="carousel-movie-buttons__styling carousel-movie-buttons--add">
                     <p>
                       <AiOutlineHeart className="carousel-movie-buttons__heart__icon" />
                       Add to list
                     </p>
                   </button>
-                </span>
+                </span> */}
                 <span>
                   <button
                     className="carousel-movie-buttons__styling carousel-movie-buttons--add"
