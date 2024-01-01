@@ -16,9 +16,9 @@ const Navbar = () => {
           <li className="navbar-ul__link">
             <Link to="/nowplayingshows">Now Playing Tv Shows</Link>
           </li>
-          <li className="navbar-ul__link">
+          {/* <li className="navbar-ul__link">
             <Link to="/favorites">Favorites</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <SearchBar />
