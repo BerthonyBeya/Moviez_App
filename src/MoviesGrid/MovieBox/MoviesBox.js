@@ -2,14 +2,9 @@ import "../MoviesGrid.scss";
 import { FaPlay, FaClipboardList } from "react-icons/fa";
 /* import { AiOutlineHeart } from "react-icons/ai"; */
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const MoviesBox = (props) => {
   const navigate = useNavigate();
-
-  // LocalStorage
-  const [storage, setStorage] = useState([]);
-  localStorage.setItem("favorites", JSON.stringify(storage));
 
   // Navigating to movies or shows details page
   const detailsHandler = () => {
@@ -21,12 +16,6 @@ const MoviesBox = (props) => {
     navigate(`/video/${props.id}/${props.type}`);
   }; */
 
-  // Add Favorite
-  /* const favoriteHandler = () => {
-    setStorage((currentState) => {
-      return [...currentState, props.forStorage];
-    });
-  }; */
 
   return (
     <div className="movies-grid__movie">
