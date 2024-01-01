@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaPlay } from "react-icons/fa";
 /* import { useNavigate } from "react-router-dom"; */
-import { AiOutlineHeart } from "react-icons/ai";
+/* import { AiOutlineHeart } from "react-icons/ai"; */
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
