@@ -3,7 +3,31 @@
    License: none (public domain)
 */
 @import "./sass/variables";
+@import "./sass/mixins";
 
+html {
+    font-size: 1rem;
+
+    @include respond(small-phone) {
+        font-size: 8px;
+    }
+
+    @include respond(phone) {
+        font-size: 10px;
+    }
+
+    @include respond(tab-port) {
+        font-size: 12px;
+    }
+
+    @include respond(tab-land) {
+        font-size: 14px;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 16px;
+    }
+}
 
 * {
     box-sizing: border-box;
