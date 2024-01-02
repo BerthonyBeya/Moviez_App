@@ -32,18 +32,46 @@
     justify-content: space-evenly;
     /* border: 1px solid red; */
 
+    &__language {
+        @include respond(small-phone) {
+            font-size: 2rem;
+        }
+    }
+
+    @include respond (small-phone) {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 4rem;
+    }
+
     &__title {
         font-size: 2.5rem;
         padding-bottom: 0.5rem;
         line-height: 1rem;
         font-weight: bold;
         text-shadow: 5px 5px 5px $black-color;
+
+        @include respond(small-phone) {
+            font-size: 4rem;
+            line-height: 5rem;
+            padding-bottom: 4rem;
+        }
+
     }
 
     &__bio {
         font-size: 0.9rem;
         color: lighten($color: $gray-color, $amount: 40%);
         line-height: 1.5rem;
+
+        @include respond(small-phone) {
+            font-size: 2rem;
+            line-height: 3.5rem;
+            padding-bottom: 3rem;
+        }
     }
 
     &-details {
@@ -70,10 +98,20 @@
     &-details__rate,
     &-details__release {
         margin-right: 2rem;
+
+        @include respond(small-phone) {
+            font-size: 2rem;
+            line-height: 3.5rem;
+        }
     }
 
     &-details__rate {
         font-weight: bold;
+
+        @include respond(small-phone) {
+            font-size: 2rem;
+            line-height: 3.5rem;
+        }
     }
 
     &-buttons {
@@ -85,6 +123,12 @@
             height: 2.2rem;
             border-radius: 1rem;
             background-color: transparent;
+
+            @include respond(small-phone) {
+                font-size: 2rem;
+                width: 20rem;
+                height: 6rem;
+            }
         }
 
         &--watch {
@@ -117,6 +161,10 @@
             font-size: 0.7rem;
             margin-bottom: 0.1rem;
             margin-right: 0.2rem;
+
+            @include respond(small-phone) {
+                font-size: 2rem;
+            }
         }
 
         &__heart__icon {

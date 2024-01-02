@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass/mixins";
 
 .movies-container {
     background: $secondary-color;
@@ -8,6 +9,10 @@
     background: $primary-color;
     min-height: 90vh;
     clip-path: polygon(50% 0, 68% 0, 100% 0, 100% 86%, 81% 100%, 50% 100%, 27% 100%, 0 100%, 0 4%, 8% 0);
+
+    @include respond(small-phone) {
+        clip-path: none;
+    }
 
     &>span {
         display: flex;
@@ -26,6 +31,12 @@
     padding: 5rem 1.25rem;
 
     &-font-container {
+        @include respond(small-phone) {
+            width: 15rem;
+            height: 7rem;
+            padding: 1rem;
+        }
+
         margin-bottom: 2rem;
         background-color: darken($color: $secondary-color, $amount: 15%);
         width: 9rem;
@@ -40,6 +51,11 @@
         &__h1 {
             font-size: 1.3rem;
             font-weight: 500;
+
+            @include respond(small-phone) {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
         }
     }
 
@@ -48,6 +64,10 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         grid-gap: 1.5rem;
+
+        @include respond(small-phone) {
+            display: block;
+        }
 
         &__overlay {
             position: absolute;
@@ -64,12 +84,18 @@
             border-radius: 10px;
             cursor: pointer;
 
+            @include respond(small-phone) {
+                height: 50rem;
+                border: 3px solid $secondary-color;
+            }
+
             &__img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 border-radius: 10px;
                 border: 1px solid $secondary-color;
+
                 // box-shadow: 0px 0px 5px 0.1px $secondary-color;
             }
 
@@ -108,6 +134,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include respond(small-phone) {
+                width: 10rem;
+                height: 5rem;
+                font-size: 3rem;
+
+            }
         }
 
     }

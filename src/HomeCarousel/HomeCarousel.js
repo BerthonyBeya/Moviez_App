@@ -270,7 +270,7 @@ const HomeCarousel = (props) => {
                 <p className="carousel-movie-details__release">
                   {show.first_air_date}
                 </p>
-                <p className="/* carousel-movie__language */">
+                <p className="carousel-movie__language">
                   language: {show.original_language}
                 </p>
               </div>

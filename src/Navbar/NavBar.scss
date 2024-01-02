@@ -3,11 +3,16 @@
 
 .navbar {
     width: 100%;
+    height: 3rem;
+
+    @include respond (small-phone) {
+     height: 30rem;
+    }
 }
 
 .container-box {
     @include respond (small-phone) {
-        display: block;
+        display: none;
     }
 
     display: flex;
@@ -35,8 +40,9 @@
         font-size: 1rem;
 
         @include respond (small-phone) {
-            font-size: 2.5rem;
-            padding: 2rem 0rem;
+            font-size: 3rem;
+            padding: 2.5rem 0rem;
+            border-bottom: 1px solid dodgerblue;
         }
     }
 }

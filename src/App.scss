@@ -7,6 +7,8 @@
 
 html {
     font-size: 1rem;
+    overflow-x: hidden;
+
 
     @include respond(small-phone) {
         font-size: 8px;
@@ -142,7 +144,9 @@ body {
     font-family: Raleway;
     color: $white-color;
     font-size: 0.9rem;
+    overflow: hidden;
 }
+
 
 a {
     color: lighten($color: $gray-color, $amount: 30%);
