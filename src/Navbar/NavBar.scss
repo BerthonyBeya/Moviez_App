@@ -6,13 +6,25 @@
     height: 3rem;
 
     @include respond (small-phone) {
-     height: 30rem;
+        height: 30rem;
     }
 }
 
 .container-box {
+    transition: all 0.2s ease-in-out;
+
     @include respond (small-phone) {
-        display: none;
+        display: inline;
+        transform: translateY(-310px);
+    }
+
+    &.hamburger {
+        @include respond (small-phone) {
+            display: block;
+            transform: translateY(0px);
+
+        }
+
     }
 
     display: flex;

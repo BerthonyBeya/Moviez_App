@@ -8,7 +8,6 @@ const MoviesSection = () => {
     <>
       <Navbar />
       <HomeCarousel type={"Now Playing Movies"} />
-      <Navbar />
       <MoviesGrid type={"Now Playing Movies"} />
       <Footer />
     </>
