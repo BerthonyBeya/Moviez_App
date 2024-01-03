@@ -7,28 +7,6 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
-
-    &-small {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        display: none;
-
-        &>h1 {
-            position: absolute;
-            top: 47%;
-            left: 17%;
-            font-size: 8rem;
-        }
-
-        @include respond(small-phone) {
-           display: block;
-        }
-    }
-
-    @include respond(small-phone) {
-        display: none;
-    }
 }
 
 .carousel__overlay {
@@ -38,10 +16,6 @@
     background: linear-gradient(to top, $primary-color, rgba(0, 0, 0, 0.356));
     z-index: 2;
     opacity: 1;
-
-    @include respond(small-phone) {
-        height: 100vh;
-    }
 
 }
 

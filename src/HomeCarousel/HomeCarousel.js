@@ -329,15 +329,6 @@ const HomeCarousel = (props) => {
         <Carousel interval={2000} nextIcon={false} prevIcon={false}>
           {addingCarouselDetails()}
         </Carousel>
-
-        <div className="carousel__image-small">
-          <h1 className="carousel-movie__title">moviez19</h1>
-          <img
-            src="images/image.jpg"
-            alt=""
-            className="carousel__image-small"
-          />
-        </div>
       </div>
     </>
   );
