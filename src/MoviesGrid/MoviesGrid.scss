@@ -123,13 +123,13 @@
 
             @include respond(small-phone) {
                 .movies-grid__overlay {
-                    visibility: visible;
-                    /* flex-direction: row;
+                    display: none;
+                    flex-direction: row;
                     left: 2rem;
                     justify-content: space-between;
                     height: 15%;
                     width: 93%;
-                    bottom: 5rem; */
+                    bottom: 5rem;
 
                 }
             }
