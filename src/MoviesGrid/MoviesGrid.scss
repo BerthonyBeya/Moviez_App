@@ -12,7 +12,6 @@
 
     @include respond(small-phone) {
         clip-path: none;
-        height: 100vh;
     }
 
     &>span {
