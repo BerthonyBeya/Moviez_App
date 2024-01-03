@@ -112,7 +112,7 @@ const HomeCarousel = (props) => {
           <Carousel.Item key={uuid()}>
             <img
               className="carousel__image"
-              src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w92/${movie.poster_path}`}
               alt="First slide"
             />
             <Carousel.Caption className="carousel-movie">
