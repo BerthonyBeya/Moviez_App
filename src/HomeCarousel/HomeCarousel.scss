@@ -8,8 +8,26 @@
     height: 100vh;
     object-fit: cover;
 
-    @include respond(small-phone) {
+    &-small {
+        width: 100%;
         height: 100vh;
+        object-fit: cover;
+        display: none;
+
+        &>h1 {
+            position: absolute;
+            top: 47%;
+            left: 17%;
+            font-size: 8rem;
+        }
+
+        @include respond(small-phone) {
+           display: block;
+        }
+    }
+
+    @include respond(small-phone) {
+        display: none;
     }
 }
 
