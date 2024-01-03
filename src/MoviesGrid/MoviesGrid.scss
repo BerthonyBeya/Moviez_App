@@ -12,6 +12,7 @@
 
     @include respond(small-phone) {
         clip-path: none;
+        height: 100vh;
     }
 
     &>span {
@@ -123,7 +124,7 @@
 
             @include respond(small-phone) {
                 .movies-grid__overlay {
-                    display: none;
+                    visibility: visible;
                     flex-direction: row;
                     left: 2rem;
                     justify-content: space-between;
