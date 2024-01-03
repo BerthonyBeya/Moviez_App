@@ -4,13 +4,14 @@
 .hamburger-menu {
     visibility: hidden;
     position: fixed;
-    top: 0rem;
-    right: 0rem;
+    top: 1rem;
+    right: 1.2rem;
     z-index: 50;
     width: 9rem;
-    height: 9rem;
+    height: 8rem;
     background: $secondary-color;
     padding: 1rem;
+    border-radius: 30%;
 
     display: flex;
     justify-content: space-around;
@@ -19,7 +20,7 @@
 
 
     &>div {
-        width: 8rem;
+        width: 6rem;
         height: 1rem;
         background-color: $white-color;
     }
@@ -27,6 +28,6 @@
     @include respond (small-phone) {
         visibility: visible;
     }
-    
+
 
 }

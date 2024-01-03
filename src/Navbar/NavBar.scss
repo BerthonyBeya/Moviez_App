@@ -54,7 +54,7 @@
         @include respond (small-phone) {
             font-size: 3rem;
             padding: 2.5rem 0rem;
-            border-bottom: 1px solid dodgerblue;
+            border-bottom: 1px solid $secondary-color;
         }
     }
 }
