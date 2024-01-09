@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass/mixins";
 
 .footer {
     height: 5rem;
@@ -10,19 +11,35 @@
     align-items: center;
     flex-direction: column;
 
+
+
+    @include respond(small-phone) {
+        height: 12rem;
+        padding: 1.5rem; 
+    }
+
     &-list {
         display: flex;
         width: 5rem;
         justify-content: space-between;
+
+        @include respond(small-phone) {
+            width: 10rem;
+        }
 
         &__INSTAGRAM,
         &__GITHUB {
             height: 2rem;
             width: 2rem;
 
+            @include respond(small-phone) {
+                height: 3rem;
+                width: 3rem;
+            }
+
             &:hover {
-              color: $secondary-color;
-              cursor: pointer;
+                color: $secondary-color;
+                cursor: pointer;
             }
         }
     }

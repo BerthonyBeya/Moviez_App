@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass/mixins";
 
 
 .details-container {
@@ -23,6 +24,16 @@
         &>span {
             font-weight: 700;
             font-size: 1.3rem;
+
+            @include respond(small-phone) {
+                font-size: 2.5rem;
+            }
+        }
+
+        @include respond(small-phone) {
+            font-size: 2rem;
+            line-height: 3.7rem;
+            padding-right: 3rem;
         }
     }
 }
@@ -35,11 +46,20 @@
     padding: 2rem;
     margin: 0.5rem;
 
+    @include respond(small-phone) {
+        display: block;
+    }
+
     &__poster {
         height: 23rem;
         margin-right: 0.5rem;
         object-fit: cover;
 
+        @include respond(small-phone) {
+            width: 100%;
+            object-fit: cover;
+            height: 70rem;
+        }
     }
 
     &-infos {
@@ -52,6 +72,12 @@
                 font-weight: 700;
             }
 
+            @include respond(small-phone) {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+                line-height: 5rem;
+            }
+
         }
 
         &__more {
@@ -62,11 +88,25 @@
                 font-weight: 700;
             }
 
+            @include respond(small-phone) {
+                font-size: 2rem;
+                padding-top: 2rem;
+            }
+
+        }
+
+        @include respond(small-phone) {
+            padding: 3rem 0rem;
+            min-height: 30rem;
         }
     }
 
     &--buttons {
         padding-left: 0.5rem;
+
+        @include respond(small-phone) {
+            padding-top: 3rem;
+        }
     }
 }
 
