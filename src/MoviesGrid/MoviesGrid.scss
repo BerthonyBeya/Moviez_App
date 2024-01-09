@@ -129,12 +129,12 @@
                 .movies-grid__overlay {
                     visibility: visible;
                     flex-direction: row;
-                    left: 2rem;
+                    left: 1.8rem;
                     justify-content: space-between;
                     height: 15%;
                     width: 93%;
                     bottom: 5rem;
-
+                    padding-left: 0.5rem
                 }
             }
         }
