@@ -28,7 +28,7 @@ const HomeCarousel = (props) => {
   useEffect(() => {
     const searchHomeMovies = async () => {
       const homeMovieTitles = [
-        "guardians of the galaxy volume 3",
+        "Guardians of the galaxy volume 3",
         "Oppenheimer",
         "Fast",
         "Meg 2: The Trench",
