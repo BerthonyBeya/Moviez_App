@@ -1,0 +1,81 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+
+
+.search-bar {
+    display: flex;
+    position: relative;
+
+    @include respond (small-phone) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &>input {
+        @include respond (small-phone) {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 8rem;
+            font-size: 2.5rem;
+            padding: 0rem 4.5rem;
+
+        }
+
+
+        width: 22rem;
+        height: 2.813rem;
+        border-radius: 0.625rem;
+        padding: 0rem 2.813rem;
+        font-size: 1rem;
+        color: $white-color;
+        background: $gray-color;
+        opacity: 0.6;
+        border: none;
+        outline: none;
+        transition: all ease-in-out 0.3s;
+        box-shadow: 0.313rem 0.313rem 0.625rem $black-color;
+
+
+        &::placeholder {
+            color: $white-color;
+        }
+
+        &:focus {
+            transition: all ease-in-out 0.3s;
+            @include searchBarHoveringEffect;
+
+        }
+
+        &:hover {
+            transition: all ease-in-out 0.3s;
+            @include searchBarHoveringEffect;
+
+        }
+    }
+
+    &>button {
+        background: transparent;
+        border: none;
+
+        position: absolute;
+        z-index: 2;
+        top: 0.6rem;
+        left: 0.625rem;
+
+        @include respond (small-phone) {
+            top: 2.5rem;
+        }
+    }
+
+    &__icon {
+        color: $secondary-color;
+        font-size: 1.1rem;
+
+        @include respond (small-phone) {
+            font-size: 2.5rem;
+        }
+    }
+
+}

@@ -1,0 +1,41 @@
+/* #42b442 */
+/* MEDIA QUERY MANAGER */
+.footer {
+  height: 5rem;
+  background-color: #030303;
+  border-top: 1px solid #42b442;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 30em) {
+  .footer {
+    height: 12rem;
+    padding: 1.5rem;
+  }
+}
+.footer-list {
+  display: flex;
+  width: 5rem;
+  justify-content: space-between;
+}
+@media (max-width: 30em) {
+  .footer-list {
+    width: 10rem;
+  }
+}
+.footer-list__INSTAGRAM, .footer-list__GITHUB {
+  height: 2rem;
+  width: 2rem;
+}
+@media (max-width: 30em) {
+  .footer-list__INSTAGRAM, .footer-list__GITHUB {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.footer-list__INSTAGRAM:hover, .footer-list__GITHUB:hover {
+  color: #42b442;
+  cursor: pointer;
+}/*# sourceMappingURL=Footer.css.map */
