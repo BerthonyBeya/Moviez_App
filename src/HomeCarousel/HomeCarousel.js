@@ -30,7 +30,7 @@ const HomeCarousel = (props) => {
       const homeMovieTitles = [
         "Guardians of the galaxy volume 3",
         "Oppenheimer",
-        "Fast",
+        "black panther",
         "Meg 2: The Trench",
       ];
 
