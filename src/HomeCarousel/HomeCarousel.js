@@ -34,7 +34,7 @@ const HomeCarousel = (props) => {
         "Meg 2: The Trench",
       ];
 
-      // Get home moviesss
+      // Get home movies
       homeMovieTitles.forEach((movie) => {
         const fetchMovie = async () => {
           const result = await axios(
