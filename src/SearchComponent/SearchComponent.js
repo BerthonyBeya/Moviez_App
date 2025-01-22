@@ -5,12 +5,12 @@ import MoviesGrid from "../MoviesGrid/MoviesGrid";
 import { useDispatch } from "react-redux";
 import { addSearch } from "../store/features/searchSlice";
 import { useEffect, useState } from "react";
+import "./SearchComponent.css";
 import Footer from "../Footer/Footer";
 
 const SearchComponent = () => {
   const [results, setResults] = useState([]);
   const { id } = useParams();
-
 
   useEffect(() => {
     const fetchSearchedData = async () => {
@@ -23,7 +23,6 @@ const SearchComponent = () => {
           return axios(data);
         })
       );
-
 
       // Checking which one is successful and adding them to the state
       if (
@@ -61,6 +60,9 @@ const SearchComponent = () => {
   return (
     <>
       <Navbar />
+      <div className="search-banner">
+         <h1>Search results</h1>
+      </div>
       <MoviesGrid type={"Searched"} />
       <Footer />
     </>
