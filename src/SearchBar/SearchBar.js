@@ -18,6 +18,8 @@ const SearchBar = () => {
   // Using useNavigate to navigate to different router and passing in the Title
   const titleHandler = (event) => {
     event.preventDefault();
+    if (title === "") return alert("Field is empty!");
+    console.log("Hello!");
     navigate(`/search/${title}`);
     setTitle("");
   };
